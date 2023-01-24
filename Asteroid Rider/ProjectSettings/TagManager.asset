@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GameManager
+  - Tile
+  - Sea
+  - P2L_Radar
+  - P2R_Radar
   layers:
   - Default
   - TransparentFX

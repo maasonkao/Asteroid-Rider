@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5071645, g: 0.52162117, b: 0.8207547, a: 0.8352941}
+  m_Color: {r: 0.5071645, g: 0.52162117, b: 0.8207547, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5ca446d2e66ee4195ee4da93b7019a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileName: 
+  tileType: 0
+  spriteRenderer: {fileID: 0}
 --- !u!50 &3892834945766950179
 Rigidbody2D:
   serializedVersion: 4
