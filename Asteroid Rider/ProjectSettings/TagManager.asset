@@ -9,6 +9,14 @@ TagManager:
   - Sea
   - P2L_Radar
   - P2R_Radar
+  - P1_Sea
+  - P2_Sea
+  - P3_Sea
+  - P4_Sea
+  - P1_Player
+  - P2_Player
+  - P3_Player
+  - P4_Player
   layers:
   - Default
   - TransparentFX

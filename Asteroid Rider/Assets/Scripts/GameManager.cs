@@ -8,58 +8,44 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private int playerCount;
-    [SerializeField] private int currentPlayer;
+    [SerializeField] private int currentPlayerNum;
     [SerializeField] private GameObject Canvas;
-    //change this to player 
-    public SeaScript P1_Sea;
-    public SeaScript P2_Sea;
-    public GameObject cameras;
-    public ShipManager shipManager;
+    [SerializeField] private List<GameObject> playerList;
 
+    private GameObject currentPlayer;
+
+    public GameObject mainCamera;
+    public ShipManager shipManager;
 
     public TextMeshProUGUI playerTurnText;
     public TextMeshProUGUI statusText;
 
-    public float textDelayTime = 3, timer;
-    
+    private float textDelayTime = 3, timer;
     private bool altText = false;
     private bool gameOver = false;
 
     void Start()
     {
-        P1_Sea = GameObject.Find("P1_Sea").GetComponent<SeaScript>();
-        P2_Sea = GameObject.Find("P2_Sea").GetComponent<SeaScript>();
 
-        //change to just ShipManager
-        shipManager = GameObject.FindGameObjectWithTag("P1_ShipManager").GetComponent<ShipManager>();
+        shipManager = GameObject.FindGameObjectWithTag("ShipManager").GetComponent<ShipManager>();
         EnableShips();
-        playerTurnText.text = currentPlayer.ToString();
+        playerTurnText.text = currentPlayerNum.ToString();
     }
 
     void Update()
     {
-        if(P1_Sea.leftDestroyed == true && P1_Sea.rightDestroyed == true)
-        {
-            GameOver();
-        }
-        if (P2_Sea.leftDestroyed == true && P2_Sea.rightDestroyed == true)
-        {
-            GameOver();
-        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             altText = false;
             NextPlayer();
-            cameras.transform.position = new Vector3(4.3499999f, 19.7999992f, -10);
             Canvas.SetActive(false);
             EnableShips();
         }
 
         if (Input.GetMouseButton(1))
         {
-            SetActiveCamera();
+            SetActivemainCamera();
             Canvas.SetActive(true);
         }
 
@@ -74,12 +60,8 @@ public class GameManager : MonoBehaviour
             SetText("You Win!");
     }
 
-    void SetActiveCamera()
+    void SetActivemainCamera()
     {
-        if(currentPlayer == 1)
-            cameras.transform.position = new Vector3(4.3499999f, 4.5f, -10);
-        else if(currentPlayer == 2)
-            cameras.transform.position = new Vector3(52.7999992f, 4.5f, -10);
 
         //Between turn screen coords
         //Vector3(4.3499999,19.7999992,-10)
@@ -87,18 +69,15 @@ public class GameManager : MonoBehaviour
 
     void EnableShips()
     {
-        string playerString = "P" + (currentPlayer).ToString() + "_Ship";
+        string playerString = "P" + (currentPlayerNum).ToString() + "_Ship";
         shipManager.SetShips(playerString);
     }
     
     private void NextPlayer()
     {
-        if (currentPlayer == playerCount)
-            currentPlayer = 1;
-        else
-            currentPlayer += 1;
-
-        playerTurnText.text = currentPlayer.ToString();
+        currentPlayerNum++;
+        currentPlayerNum %= playerList.Count;
+        playerTurnText.text = currentPlayerNum.ToString();
     }
 
     public void SetText(string text)

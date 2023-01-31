@@ -20,7 +20,7 @@ public class RadarScript : MonoBehaviour
 
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         grid = GameObject.Find("Grid").GetComponent<Grid>();
 
         seaName = "P" + name[1] + "_Sea";
