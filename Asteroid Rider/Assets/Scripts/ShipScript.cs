@@ -30,8 +30,8 @@ public class ShipScript : MonoBehaviour
 
     private void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-        grid = GameObject.Find("Grid").GetComponent<Grid>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        grid = gameManager.GetComponent<Grid>();
         damage = 0;
 
         switch (shipType)

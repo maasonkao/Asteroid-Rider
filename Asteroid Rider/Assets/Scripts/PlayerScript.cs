@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,8 +18,9 @@ public class PlayerScript : MonoBehaviour
     
     public Vector3 location;
     public List<Vector3> radarLocations;
-    
+
     public bool isDefeated;
+    public bool placedShips;
 
     /*
 
@@ -31,6 +33,7 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shipList = GameObject.FindGameObjectsWithTag("P1_Ship").ToList();
         RadarLeft.SetActive(false);
         RadarRight.SetActive(false);
     }
@@ -45,5 +48,13 @@ public class PlayerScript : MonoBehaviour
     {
         RadarLeft.SetActive(true);
         RadarRight.SetActive(true);
+    }
+
+    public void SetRadar(GameObject radar, bool isLeft)
+    {
+        if (isLeft)
+            RadarLeft = radar;
+        else
+            RadarRight = radar;
     }
 }

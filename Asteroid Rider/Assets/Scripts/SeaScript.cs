@@ -14,7 +14,10 @@ public class SeaScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        allTiles = GameObject.FindGameObjectsWithTag(name).ToList<GameObject>();
+        foreach(Transform child in transform)
+        {
+            allTiles.Add(child.gameObject);
+        }
 
         for(int i = 0; i < allTiles.Count() / 2; i++)
         {
