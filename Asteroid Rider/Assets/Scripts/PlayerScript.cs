@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour
     public List<Vector3> radarLocations;
 
     public bool isDefeated;
-    public bool placedShips;
+    public bool canPlaceShips;
 
     /*
 
@@ -33,7 +33,8 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shipList = GameObject.FindGameObjectsWithTag("P1_Ship").ToList();
+        string shipString = "P" + playerNum + "_Ship";
+        shipList = GameObject.FindGameObjectsWithTag(shipString).ToList();
         RadarLeft.SetActive(false);
         RadarRight.SetActive(false);
     }
@@ -56,5 +57,14 @@ public class PlayerScript : MonoBehaviour
             RadarLeft = radar;
         else
             RadarRight = radar;
+    }
+
+    public void PlaceShips()
+    {
+        foreach (GameObject ship in shipList)
+        {
+            ShipScript shipScript = ship.GetComponent<ShipScript>();
+            shipScript.Move();
+        }
     }
 }

@@ -17,6 +17,8 @@ TagManager:
   - P2_Player
   - P3_Player
   - P4_Player
+  - P1_Ship
+  - P2_Ship
   layers:
   - Default
   - TransparentFX
