@@ -22,16 +22,10 @@ public class PlayerScript : MonoBehaviour
     public bool isDefeated;
     public bool canPlaceShips;
 
-    /*
 
-    - SetRadar(Player, string)
-    + CreateRadar(Player, string)
-    - GetTotalHP
 
-     */
 
-    // Start is called before the first frame update
-    void Start()
+/*    void Start()
     {
         string shipString = "P" + playerNum + "_Ship";
         shipList = GameObject.FindGameObjectsWithTag(shipString).ToList();
@@ -66,5 +60,5 @@ public class PlayerScript : MonoBehaviour
             ShipScript shipScript = ship.GetComponent<ShipScript>();
             shipScript.Move();
         }
-    }
+    }*/
 }
