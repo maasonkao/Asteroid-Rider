@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         foreach(GameObject obj in tempList)
         {
             playerList.Add(obj.transform.parent.gameObject);
+            Debug.Log("Added " + obj.transform.parent.gameObject.name);
         }
         EnableShips();
         playerTurnText.text = currentPlayerNum.ToString();
