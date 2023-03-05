@@ -43,6 +43,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    public void SetText(string text)
+    {
+/*        altText = true;
+        timer = 0;
+        statusText.text = text;*/
+    }
+
     /*    [SerializeField] private int currentPlayerNum = 0;
         [SerializeField] private GameObject Canvas;
         [SerializeField] private List<GameObject> playerList;
