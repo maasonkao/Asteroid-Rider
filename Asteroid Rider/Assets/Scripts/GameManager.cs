@@ -22,33 +22,68 @@ public enum BattleState
 public class GameManager : MonoBehaviour
 {
     public GameObject playerPrefab;
+    public Camera camera;
+    public List<GameObject> playerList;
 
-    public List<Transform> playerPositionList;
+    
 
     public BattleState state;
 
     [SerializeField] int playerCount;
+    [SerializeField] int currentTurn = 1;
+    [SerializeField] int currentPlayer;
+
 
     private void Start()
     {
-        state = BattleState.START;
         SetupBattle();
     }
 
     void SetupBattle()
     {
-        for(int i = 0; i < playerCount; i++)
+        state = BattleState.START;
+        playerList = GameObject.FindGameObjectsWithTag("Player").ToList();
+        playerCount = playerList.Count();
+
+    }
+
+    public void NextTurn()
+    {
+        currentTurn++;
+        if (currentTurn >= playerCount)
         {
-            Instantiate(playerPrefab, playerPositionList[i]);
+            currentTurn = 0;
+        }
+        currentPlayer = playerList[currentTurn].GetComponent<PlayerScript>().playerNum;
+        string toENUM = "P" + currentPlayer.ToString();
+        BattleState.TryParse(toENUM, out state);
+        Debug.Log(state);
+        camera.transform.position = playerList[currentTurn].transform.position;
+
+    }
+
+    void SetCamera()
+    {
+        switch (state)
+        {
+            case BattleState.P1:
+                camera.transform.position = playerList[currentTurn].transform.position;
+                break;
+            case BattleState.P2:
+                break;
+            case BattleState.P3:
+                break;
+            case BattleState.P4:
+                break;
+            default:
+                Debug.LogWarning("Unknown state for camera");
+                break;
         }
     }
 
-
     public void SetText(string text)
     {
-/*        altText = true;
-        timer = 0;
-        statusText.text = text;*/
+
     }
 
     /*    [SerializeField] private int currentPlayerNum = 0;

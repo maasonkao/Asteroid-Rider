@@ -27,13 +27,5 @@ public class TurnManager : MonoBehaviour
         
     }
 
-    void NextTurn()
-    {
-        currentTurn++;
-        if(currentTurn >= playersList.Count)
-        {
-            currentTurn = 0;
-        }
-        currentPlayer = playersList[currentTurn];
-    }
+
 }
