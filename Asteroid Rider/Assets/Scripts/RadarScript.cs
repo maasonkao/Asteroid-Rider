@@ -73,7 +73,6 @@ public class RadarScript : MonoBehaviour
 
     private void CheckTile(string tileName)
     {
-        
         GameObject targetRadarTile = radarTiles.Where(obj => obj.name == tileName).FirstOrDefault();
         GameObject targetSeaTile = seaTiles.Where(obj => obj.name == tileName).FirstOrDefault();
 

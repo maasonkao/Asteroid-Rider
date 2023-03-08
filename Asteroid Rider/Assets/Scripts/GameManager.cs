@@ -22,7 +22,7 @@ public enum BattleState
 public class GameManager : MonoBehaviour
 {
     public GameObject playerPrefab;
-    public Camera camera;
+    public Camera mainCamera;
     public List<GameObject> playerList;
 
     
@@ -55,19 +55,22 @@ public class GameManager : MonoBehaviour
             currentTurn = 0;
         }
         currentPlayer = playerList[currentTurn].GetComponent<PlayerScript>().playerNum;
-        string toENUM = "P" + currentPlayer.ToString();
-        BattleState.TryParse(toENUM, out state);
-        Debug.Log(state);
-        camera.transform.position = playerList[currentTurn].transform.position;
-
+        string playerName = playerList[currentTurn].GetComponent<PlayerScript>().playerName;
+        BattleState.TryParse(playerName, out state);
+        Debug.Log("State:" + state);
+        Debug.Log("Player Name:" + playerName);
+        mainCamera.transform.position = new Vector3(0, 20, -10);
     }
 
-    void SetCamera()
+
+
+    public void SetCamera()
     {
+        mainCamera.transform.position = playerList[currentTurn].transform.position + new Vector3(0, 0, -10);
+
         switch (state)
         {
             case BattleState.P1:
-                camera.transform.position = playerList[currentTurn].transform.position;
                 break;
             case BattleState.P2:
                 break;
