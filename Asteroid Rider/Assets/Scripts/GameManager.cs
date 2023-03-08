@@ -32,7 +32,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] int playerCount;
     [SerializeField] int currentTurn = 1;
     [SerializeField] int currentPlayer;
-
+    [SerializeField] float textDelayTime;
+    [SerializeField] TextMeshPro statusText;
+    bool altText;
+    float timer;
 
     private void Start()
     {
@@ -56,9 +59,11 @@ public class GameManager : MonoBehaviour
         }
         currentPlayer = playerList[currentTurn].GetComponent<PlayerScript>().playerNum;
         string playerName = playerList[currentTurn].GetComponent<PlayerScript>().playerName;
-        BattleState.TryParse(playerName, out state);
-        Debug.Log("State:" + state);
-        Debug.Log("Player Name:" + playerName);
+        if(!BattleState.TryParse(playerName, out state))
+        {
+            Debug.LogWarning("Could not parse state: " + playerName);
+        }
+
         mainCamera.transform.position = new Vector3(0, 20, -10);
     }
 
@@ -86,9 +91,33 @@ public class GameManager : MonoBehaviour
 
     public void SetText(string text)
     {
-
+        altText = true;
+        timer = 0;
+        statusText.text = text;
     }
-
+    private void StatusText()
+    {
+        if(playerList[currentTurn].GetComponent<PlayerScript>().canPlaceShips)
+        {
+            statusText.text = "Place your ships";
+        }
+            if (!altText)
+        {
+            statusText.text = "Click on a radar tile to fire";
+        }
+        else
+        {
+            if (timer < textDelayTime)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                altText = false;
+                timer = 0;
+            }
+        }
+    }
     /*    [SerializeField] private int currentPlayerNum = 0;
         [SerializeField] private GameObject Canvas;
         [SerializeField] private List<GameObject> playerList;
