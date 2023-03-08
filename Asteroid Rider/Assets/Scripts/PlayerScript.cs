@@ -16,23 +16,26 @@ public class PlayerScript : MonoBehaviour
     public List<GameObject> shipList;
     public int totalHP, leftHP, rightHP;
     
-    public Vector3 location;
     public List<Vector3> radarLocations;
 
-    public bool isDefeated;
-    public bool canPlaceShips;
+
+    public bool isAlive = true;
+    public bool canPlaceShips = true;
+
+    private static float radarPos = 5.5f;
 
 
-
-
-/*    void Start()
+void Start()
     {
-        string shipString = "P" + playerNum + "_Ship";
+        radarLocations.Add(this.transform.position + new Vector3(-radarPos, 0, 0));
+        radarLocations.Add(this.transform.position + new Vector3(radarPos, 0, 0));
+
+        string shipString = playerName + "_Ship";
         shipList = GameObject.FindGameObjectsWithTag(shipString).ToList();
         RadarLeft.SetActive(false);
         RadarRight.SetActive(false);
     }
-
+    /*    
     // Update is called once per frame
     void Update()
     {
