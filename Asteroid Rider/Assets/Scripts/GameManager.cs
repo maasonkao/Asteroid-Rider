@@ -42,6 +42,11 @@ public class GameManager : MonoBehaviour
         SetupBattle();
     }
 
+    private void Update()
+    {
+        StatusText();
+    }
+
     void SetupBattle()
     {
         state = BattleState.START;
@@ -63,7 +68,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("Could not parse state: " + playerName);
         }
-
+        SetText(playerName + " Turn");
         mainCamera.transform.position = new Vector3(0, 20, -10);
     }
 
