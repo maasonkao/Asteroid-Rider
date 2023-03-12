@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
         SetText(playerName + " Turn");
         mainCamera.transform.position = new Vector3(0, 20, -10);
     }
-
+    //second comp test
 
 
     public void SetCamera()
