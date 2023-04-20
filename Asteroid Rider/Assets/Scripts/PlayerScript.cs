@@ -14,7 +14,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject RadarRight;
 
     public List<GameObject> shipList;
-    public int totalHP, leftHP, rightHP;
+    [SerializeField] int totalHP, leftHP, rightHP;
     
     public List<Vector3> radarLocations;
 
@@ -38,16 +38,17 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         if (canPlaceShips)
-        {
-            foreach(GameObject ship in shipList)
-            {
-                ship.GetComponent<ShipScript>().Move();
-            }
-        }
+            PlaceShips();
+        GetHP();
     }
-    /*    
-    // Update is called once per frame
 
+    private void GetHP()
+    {
+        leftHP = Sea.GetComponent<SeaScript>().leftHP;
+        rightHP = Sea.GetComponent<SeaScript>().rightHP;
+        totalHP = leftHP + rightHP;
+
+    }
 
     private void TurnOnRadar()
     {
@@ -70,5 +71,5 @@ public class PlayerScript : MonoBehaviour
             ShipScript shipScript = ship.GetComponent<ShipScript>();
             shipScript.Move();
         }
-    }*/
+    }
 }

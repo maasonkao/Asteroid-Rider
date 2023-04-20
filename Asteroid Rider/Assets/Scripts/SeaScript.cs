@@ -11,7 +11,7 @@ public class SeaScript : MonoBehaviour
     public List<GameObject> allTiles;
     public int leftHP, rightHP;
     public bool leftDestroyed = false, rightDestroyed = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         foreach(Transform child in transform)
@@ -28,10 +28,15 @@ public class SeaScript : MonoBehaviour
 
     private void Update()
     {
+        SetHP();
+    }
+
+    private void SetHP()
+    {
         int tempLeft = 0, tempRight = 0;
-        for(int i=0; i<leftSea.Count(); i++)
+        for (int i = 0; i < leftSea.Count(); i++)
         {
-            if(leftSea[i].GetComponent<TileScript>().GetTileType() == TileScript.TileType.shipTile)
+            if (leftSea[i].GetComponent<TileScript>().GetTileType() == TileScript.TileType.shipTile)
             {
                 tempLeft++;
             }
@@ -43,6 +48,7 @@ public class SeaScript : MonoBehaviour
         }
         leftHP = tempLeft;
         rightHP = tempRight;
+
         if (leftHP == 0)
             leftDestroyed = true;
         else
@@ -53,6 +59,4 @@ public class SeaScript : MonoBehaviour
         else
             rightDestroyed = false;
     }
-
-
 }
