@@ -25,7 +25,7 @@ public class PlayerScript : MonoBehaviour
     private static float radarPos = 5.5f;
 
 
-void Start()
+    void Start()
     {
         radarLocations.Add(this.transform.position + new Vector3(-radarPos, 0, 0));
         radarLocations.Add(this.transform.position + new Vector3(radarPos, 0, 0));
@@ -35,12 +35,19 @@ void Start()
         RadarLeft.SetActive(false);
         RadarRight.SetActive(false);
     }
-    /*    
-    // Update is called once per frame
     void Update()
     {
-        
+        if (canPlaceShips)
+        {
+            foreach(GameObject ship in shipList)
+            {
+                ship.GetComponent<ShipScript>().Move();
+            }
+        }
     }
+    /*    
+    // Update is called once per frame
+
 
     private void TurnOnRadar()
     {

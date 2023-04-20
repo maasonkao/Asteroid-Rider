@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
         {
             statusText.text = "Place your ships";
         }
-            if (!altText)
+        if (!altText)
         {
             statusText.text = "Click on a radar tile to fire";
         }
