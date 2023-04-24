@@ -13,7 +13,6 @@ public class ViewBlockerScript : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        Debug.Log("Clicked " + this.name);
         gameManager.SetCamera();
     }
 }
