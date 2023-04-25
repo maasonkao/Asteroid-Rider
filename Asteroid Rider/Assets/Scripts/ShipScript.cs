@@ -71,7 +71,7 @@ public class ShipScript : MonoBehaviour
             {
                 Rotate();
             }
-            transform.localPosition = grid.GetCellCenterWorld(mousePos);
+            transform.position = grid.GetCellCenterWorld(mousePos);
         }
     }
 
@@ -108,7 +108,6 @@ public class ShipScript : MonoBehaviour
         if (collision.tag.Contains("Sea"))
         {
             touchingTiles.Add(collision.gameObject);
-            //touchingTiles.Add(grid.LocalToCell(collision.gameObject.transform.position));
         }
     }
 
@@ -117,7 +116,6 @@ public class ShipScript : MonoBehaviour
         if (collision.tag.Contains("Sea"))
         {
             touchingTiles.Remove(collision.gameObject);
-            //touchingTiles.Remove(grid.LocalToCell(collision.gameObject.transform.position));
         }
     }
 
