@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] int currentTurn = 1;
     [SerializeField] int currentPlayer;
     [SerializeField] float textDelayTime;
-    [SerializeField] TextMeshProUGUI statusText;
+    public TextMeshProUGUI statusText;
     bool altText;
     float timer;
 
