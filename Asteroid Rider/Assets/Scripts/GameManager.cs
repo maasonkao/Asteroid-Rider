@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     void SetupBattle()
     {
         state = BattleState.START;
-        playerList = GameObject.FindGameObjectsWithTag("Player").ToList();
+        playerList = GameObject.FindGameObjectsWithTag("Player").OrderBy(n => n.name).ToList();
         playerCount = playerList.Count();
 
     }
