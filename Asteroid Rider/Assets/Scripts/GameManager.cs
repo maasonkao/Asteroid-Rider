@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] int currentPlayer;
     [SerializeField] float textDelayTime;
     [SerializeField] TextMeshProUGUI statusText;
+    [SerializeField] Canvas canvas;
     bool altText;
     float timer;
 
@@ -106,7 +107,7 @@ public class GameManager : MonoBehaviour
         {
             statusText.text = "Place your ships";
         }
-        if (!altText)
+        else if (!altText)
         {
             statusText.text = "Click on a radar tile to fire";
         }
