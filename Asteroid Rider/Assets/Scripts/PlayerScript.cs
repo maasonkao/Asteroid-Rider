@@ -14,7 +14,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject RadarRight;
 
     public List<GameObject> shipList;
-    [SerializeField] int totalHP, leftHP, rightHP;
+    public int totalHP, leftHP, rightHP;
     
     public List<Vector3> radarLocations;
 

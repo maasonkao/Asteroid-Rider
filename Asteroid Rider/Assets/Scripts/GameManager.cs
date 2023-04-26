@@ -62,12 +62,25 @@ public class GameManager : MonoBehaviour
 
     public void NextTurn()
     {
+        if (currentPlayer.canPlaceShips && currentPlayer.totalHP != 14)
+        {
+            SetText("You must place all your ships!");
+            return;
+        }
+        if (currentPlayer.canPlaceShips && (currentPlayer.leftHP == 0 || currentPlayer.rightHP == 0))
+        {
+            SetText("You must place ships on the left and right of the field");
+            return;
+        }
         mainCanvas.enabled = false;
         currentTurn++;
+
+        if (currentPlayer.canPlaceShips)
+            currentPlayer.canPlaceShips = false;
+
         if (currentTurn >= playerCount)
-        {
             currentTurn = 0;
-        }
+
         currentPlayer = playerList[currentTurn].GetComponent<PlayerScript>();
         currentPlayerNum = currentPlayer.playerNum;
         string playerName = currentPlayer.playerName;
@@ -109,7 +122,8 @@ public class GameManager : MonoBehaviour
     }
     private void StatusText()
     {
-        if(playerList[currentTurn].GetComponent<PlayerScript>().canPlaceShips)
+
+        if(playerList[currentTurn].GetComponent<PlayerScript>().canPlaceShips && !altText)
         {
             statusText.text = "Place your ships";
         }
