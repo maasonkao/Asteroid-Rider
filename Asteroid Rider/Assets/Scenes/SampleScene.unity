@@ -10448,7 +10448,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -164.40466, y: 0, z: -148.443, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -13195,8 +13195,9 @@ MonoBehaviour:
   state: 0
   playerCount: 0
   currentTurn: 0
-  currentPlayer: 0
-  textDelayTime: 0
+  currentPlayerNum: 0
+  textDelayTime: 3
+  currentPlayer: {fileID: 0}
   statusText: {fileID: 1567904081}
   mainCanvas: {fileID: 897437694}
 --- !u!4 &2057266910 stripped
