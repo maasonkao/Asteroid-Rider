@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] int currentPlayer;
     [SerializeField] float textDelayTime;
     [SerializeField] TextMeshProUGUI statusText;
-    [SerializeField] Canvas canvas;
+    [SerializeField] Canvas mainCanvas;
     bool altText;
     float timer;
 
@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void NextTurn()
     {
+        mainCanvas.enabled = false;
         currentTurn++;
         if (currentTurn >= playerCount)
         {
@@ -72,8 +73,6 @@ public class GameManager : MonoBehaviour
         SetText(playerName + " Turn");
         mainCamera.transform.position = new Vector3(0, 20, -10);
     }
-    //second comp test
-
 
     public void SetCamera()
     {

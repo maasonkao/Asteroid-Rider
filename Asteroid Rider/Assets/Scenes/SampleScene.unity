@@ -9176,6 +9176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 2047063270}
+  mainCanvas: {fileID: 897437694}
 --- !u!61 &1490488395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12474,6 +12475,7 @@ MonoBehaviour:
   currentPlayer: 0
   textDelayTime: 0
   statusText: {fileID: 1567904081}
+  mainCanvas: {fileID: 897437694}
 --- !u!4 &2057266910 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}

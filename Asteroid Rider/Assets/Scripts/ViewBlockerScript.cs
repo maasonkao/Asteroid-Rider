@@ -5,8 +5,9 @@ using UnityEngine;
 public class ViewBlockerScript : MonoBehaviour
 {
     public GameManager gameManager;
-    
-    
+    [SerializeField] Canvas mainCanvas;
+
+
     private void Start()
     {
        // var gm = gameManager.GetComponent<GameManager>();    
@@ -14,5 +15,6 @@ public class ViewBlockerScript : MonoBehaviour
     private void OnMouseDown()
     {
         gameManager.SetCamera();
+        mainCanvas.enabled = true;
     }
 }
