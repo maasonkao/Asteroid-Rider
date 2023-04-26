@@ -30,9 +30,10 @@ public class GameManager : MonoBehaviour
     public BattleState state;
 
     [SerializeField] int playerCount;
-    [SerializeField] int currentTurn = 1;
-    [SerializeField] int currentPlayer;
+    [SerializeField] int currentTurn = 0;
+    [SerializeField] int currentPlayerNum;
     [SerializeField] float textDelayTime;
+    [SerializeField] PlayerScript currentPlayer;
     [SerializeField] TextMeshProUGUI statusText;
     [SerializeField] Canvas mainCanvas;
     bool altText;
@@ -53,6 +54,9 @@ public class GameManager : MonoBehaviour
         state = BattleState.START;
         playerList = GameObject.FindGameObjectsWithTag("Player").OrderBy(n => n.name).ToList();
         playerCount = playerList.Count();
+        currentPlayer = playerList[currentTurn].GetComponent<PlayerScript>();
+        currentPlayerNum = currentPlayer.playerNum;
+        Debug.Log("Current player is: " + currentPlayerNum);
 
     }
 
@@ -64,9 +68,12 @@ public class GameManager : MonoBehaviour
         {
             currentTurn = 0;
         }
-        currentPlayer = playerList[currentTurn].GetComponent<PlayerScript>().playerNum;
-        string playerName = playerList[currentTurn].GetComponent<PlayerScript>().playerName;
-        if(!BattleState.TryParse(playerName, out state))
+        currentPlayer = playerList[currentTurn].GetComponent<PlayerScript>();
+        currentPlayerNum = currentPlayer.playerNum;
+        string playerName = currentPlayer.playerName;
+        Debug.Log("Current player is: " + currentPlayerNum);
+
+        if (!BattleState.TryParse(playerName, out state))
         {
             Debug.LogWarning("Could not parse state: " + playerName);
         }
@@ -123,10 +130,10 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    /*    [SerializeField] private int currentPlayerNum = 0;
+    /*    [SerializeField] private int currentPlayerNumNum = 0;
         [SerializeField] private GameObject Canvas;
         [SerializeField] private List<GameObject> playerList;
-        [SerializeField] private PlayerScript currentPlayer;
+        [SerializeField] private PlayerScript currentPlayerNum;
 
         public GameObject mainCamera;
         //    public ShipManager shipManager;
@@ -147,23 +154,23 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Added " + obj.transform.parent.gameObject.name);
             }
             EnableShips();
-            playerTurnText.text = currentPlayerNum.ToString();
-            currentPlayer = playerList[currentPlayerNum].GetComponent<PlayerScript>();
+            playerTurnText.text = currentPlayerNumNum.ToString();
+            currentPlayerNum = playerList[currentPlayerNumNum].GetComponent<PlayerScript>();
         }
 
         void Update()
         {
-            if (currentPlayer.canPlaceShips)
+            if (currentPlayerNum.canPlaceShips)
             {
-                currentPlayer.PlaceShips();
+                currentPlayerNum.PlaceShips();
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                currentPlayer.canPlaceShips = false;
+                currentPlayerNum.canPlaceShips = false;
                 altText = false;
                 NextPlayer();
                 Canvas.SetActive(false);
-                Debug.Log("You pressed space" + currentPlayer.playerName);
+                Debug.Log("You pressed space" + currentPlayerNum.playerName);
 
             }
 
@@ -194,16 +201,16 @@ public class GameManager : MonoBehaviour
 
         void EnableShips()
         {
-            string playerString = "P" + (currentPlayerNum).ToString() + "_Ship";
+            string playerString = "P" + (currentPlayerNumNum).ToString() + "_Ship";
             //shipManager.SetShips(playerString);
         }
 
         private void NextPlayer()
         {
-            currentPlayerNum++;
-            currentPlayerNum %= playerList.Count;
-            playerTurnText.text = currentPlayerNum.ToString();
-            currentPlayer = playerList[currentPlayerNum].GetComponent<PlayerScript>();
+            currentPlayerNumNum++;
+            currentPlayerNumNum %= playerList.Count;
+            playerTurnText.text = currentPlayerNumNum.ToString();
+            currentPlayerNum = playerList[currentPlayerNumNum].GetComponent<PlayerScript>();
 
         }
 
