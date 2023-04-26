@@ -50,6 +50,8 @@ public class PlayerScript : MonoBehaviour
 
     }
 
+
+
     private void TurnOnRadar()
     {
         RadarLeft.SetActive(true);

@@ -91,14 +91,17 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("Could not parse state: " + playerName);
         }
         SetText(playerName + " Turn");
+
+        //Set camera to view blocker
         mainCamera.transform.position = new Vector3(0, 20, -10);
     }
 
     public void SetCamera()
     {
+        //Set camera to player
         mainCamera.transform.position = playerList[currentTurn].transform.position + new Vector3(0, 0, -10);
 
-        switch (state)
+/*        switch (state)
         {
             case BattleState.P1:
                 break;
@@ -111,7 +114,12 @@ public class GameManager : MonoBehaviour
             default:
                 Debug.LogWarning("Unknown state for camera");
                 break;
-        }
+        }*/
+    }
+
+    public void GetLeftRadar()
+    {
+
     }
 
     public void SetText(string text)
@@ -122,21 +130,14 @@ public class GameManager : MonoBehaviour
     }
     private void StatusText()
     {
-
         if(playerList[currentTurn].GetComponent<PlayerScript>().canPlaceShips && !altText)
-        {
             statusText.text = "Place your ships";
-        }
         else if (!altText)
-        {
             statusText.text = "Click on a radar tile to fire";
-        }
         else
         {
             if (timer < textDelayTime)
-            {
                 timer += Time.deltaTime;
-            }
             else
             {
                 altText = false;
@@ -144,123 +145,4 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    /*    [SerializeField] private int currentPlayerNumNum = 0;
-        [SerializeField] private GameObject Canvas;
-        [SerializeField] private List<GameObject> playerList;
-        [SerializeField] private PlayerScript currentPlayerNum;
-
-        public GameObject mainCamera;
-        //    public ShipManager shipManager;
-
-        public TextMeshProUGUI playerTurnText;
-        public TextMeshProUGUI statusText;
-
-        private float textDelayTime = 3, timer;
-        private bool altText = false;
-        private bool gameOver = false;
-
-        void Start()
-        {
-            var tempList = GameObject.FindGameObjectsWithTag("Player").ToList();
-            foreach(GameObject obj in tempList)
-            {
-                playerList.Add(obj.transform.parent.gameObject);
-                Debug.Log("Added " + obj.transform.parent.gameObject.name);
-            }
-            EnableShips();
-            playerTurnText.text = currentPlayerNumNum.ToString();
-            currentPlayerNum = playerList[currentPlayerNumNum].GetComponent<PlayerScript>();
-        }
-
-        void Update()
-        {
-            if (currentPlayerNum.canPlaceShips)
-            {
-                currentPlayerNum.PlaceShips();
-            }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                currentPlayerNum.canPlaceShips = false;
-                altText = false;
-                NextPlayer();
-                Canvas.SetActive(false);
-                Debug.Log("You pressed space" + currentPlayerNum.playerName);
-
-            }
-
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                Debug.Log("You pressed Q");
-
-            }
-
-            if (Input.GetMouseButton(1))
-            {
-                SetActivemainCamera();
-                Canvas.SetActive(true);
-            }
-
-            if (!gameOver)
-                StatusText();
-            else
-                SetText("You Win!");
-        }
-
-        void SetActivemainCamera()
-        {
-
-            //Between turn screen coords
-            //Vector3(4.3499999,19.7999992,-10)
-        }
-
-        void EnableShips()
-        {
-            string playerString = "P" + (currentPlayerNumNum).ToString() + "_Ship";
-            //shipManager.SetShips(playerString);
-        }
-
-        private void NextPlayer()
-        {
-            currentPlayerNumNum++;
-            currentPlayerNumNum %= playerList.Count;
-            playerTurnText.text = currentPlayerNumNum.ToString();
-            currentPlayerNum = playerList[currentPlayerNumNum].GetComponent<PlayerScript>();
-
-        }
-
-        public void SetText(string text)
-        {
-            altText = true;
-            timer = 0;
-            statusText.text = text;
-        }
-
-        private void StatusText()
-        {
-    *//*        if (shipManager.placementMode)
-            {
-                statusText.text = "Place your ships";
-            }*//*
-            if (!altText)
-            {
-                statusText.text = "Click on a radar tile to fire";
-            }
-            else
-            {
-                if (timer < textDelayTime)
-                {
-                    timer += Time.deltaTime;
-                }
-                else
-                {
-                    altText = false;
-                    timer = 0;
-                }
-            }
-        }
-
-        private void GameOver()
-        {
-            gameOver = true;
-        }*/
 }
