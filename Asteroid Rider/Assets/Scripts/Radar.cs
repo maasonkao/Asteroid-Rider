@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+[CreateAssetMenu(fileName = "Radar", menuName = "Radar")]
 public class Radar : ScriptableObject
 {
 

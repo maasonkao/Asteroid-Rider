@@ -85,6 +85,8 @@ public class GameManager : MonoBehaviour
         currentPlayerNum = currentPlayer.playerNum;
         string playerName = currentPlayer.playerName;
         Debug.Log("Current player is: " + currentPlayerNum);
+        Debug.Log("Player to left is: " + GetPlayerLeft().name);
+        Debug.Log("Player to right is: " + GetPlayerRight().name);
 
         if (!BattleState.TryParse(playerName, out state))
         {
@@ -100,26 +102,22 @@ public class GameManager : MonoBehaviour
     {
         //Set camera to player
         mainCamera.transform.position = playerList[currentTurn].transform.position + new Vector3(0, 0, -10);
-
-/*        switch (state)
-        {
-            case BattleState.P1:
-                break;
-            case BattleState.P2:
-                break;
-            case BattleState.P3:
-                break;
-            case BattleState.P4:
-                break;
-            default:
-                Debug.LogWarning("Unknown state for camera");
-                break;
-        }*/
     }
 
-    public void GetLeftRadar()
+    public PlayerScript GetPlayerLeft()
     {
+        if (currentTurn == 0)
+            return playerList[playerCount - 1].GetComponent<PlayerScript>();
 
+        return playerList[currentTurn - 1].GetComponent<PlayerScript>();
+    }
+
+    public PlayerScript GetPlayerRight()
+    {
+        if (currentTurn == playerCount - 1)
+            return playerList[0].GetComponent<PlayerScript>();
+
+        return playerList[currentTurn + 1].GetComponent<PlayerScript>();
     }
 
     public void SetText(string text)
@@ -130,7 +128,7 @@ public class GameManager : MonoBehaviour
     }
     private void StatusText()
     {
-        if(playerList[currentTurn].GetComponent<PlayerScript>().canPlaceShips && !altText)
+        if(currentPlayer.canPlaceShips && !altText)
             statusText.text = "Place your ships";
         else if (!altText)
             statusText.text = "Click on a radar tile to fire";
