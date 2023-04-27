@@ -9529,7 +9529,7 @@ GameObject:
   - component: {fileID: 1490488395}
   m_Layer: 0
   m_Name: ViewBlockerText
-  m_TagString: Untagged
+  m_TagString: ViewBlocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9581,14 +9581,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
-  m_fontSizeBase: 5
+  m_fontSize: 4
+  m_fontSizeBase: 4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -13199,6 +13199,7 @@ MonoBehaviour:
   textDelayTime: 3
   currentPlayer: {fileID: 0}
   statusText: {fileID: 1567904081}
+  viewBlockerText: {fileID: 0}
   mainCanvas: {fileID: 897437694}
 --- !u!4 &2057266910 stripped
 Transform:

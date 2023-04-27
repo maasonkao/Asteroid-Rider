@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] float textDelayTime;
     [SerializeField] PlayerScript currentPlayer;
     [SerializeField] TextMeshProUGUI statusText;
+    [SerializeField] TextMeshPro viewBlockerText;
+
     [SerializeField] Canvas mainCanvas;
     bool altText;
     float timer;
@@ -56,7 +58,7 @@ public class GameManager : MonoBehaviour
         playerCount = playerList.Count();
         currentPlayer = playerList[currentTurn].GetComponent<PlayerScript>();
         currentPlayerNum = currentPlayer.playerNum;
-        Debug.Log("Current player is: " + currentPlayerNum);
+        viewBlockerText = GameObject.FindGameObjectWithTag("ViewBlocker").GetComponent<TextMeshPro>();
 
     }
 
@@ -84,9 +86,7 @@ public class GameManager : MonoBehaviour
         currentPlayer = playerList[currentTurn].GetComponent<PlayerScript>();
         currentPlayerNum = currentPlayer.playerNum;
         string playerName = currentPlayer.playerName;
-        Debug.Log("Current player is: " + currentPlayerNum);
-        Debug.Log("Player to left is: " + GetPlayerLeft().name);
-        Debug.Log("Player to right is: " + GetPlayerRight().name);
+        viewBlockerText.SetText(playerName + " Start!");
 
         if (!BattleState.TryParse(playerName, out state))
         {

@@ -21,6 +21,7 @@ TagManager:
   - P2_Ship
   - P3_Ship
   - P4_Ship
+  - ViewBlocker
   layers:
   - Default
   - TransparentFX
