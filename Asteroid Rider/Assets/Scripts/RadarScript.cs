@@ -16,7 +16,7 @@ public class RadarScript : MonoBehaviour
     private SeaScript seaScript;
 
     public TextMeshProUGUI radarText;
-    public bool hasShot = false;
+    public bool hasShot, isLeft, isDestroyed;
 
     void Start()
     {
@@ -31,9 +31,11 @@ public class RadarScript : MonoBehaviour
         switch (name[2])
         {
             case 'L':
+                isLeft = true;
                 seaTiles = seaScript.leftSea;
                 break;
             case 'R':
+                isLeft = false;
                 seaTiles = seaScript.rightSea;
                 break;
             default:

@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour
 
     public bool isAlive = true;
     public bool canPlaceShips = true;
-
+    public bool leftDestroyed, rightDestroyed;
     private static float radarPos = 5.5f;
 
 
@@ -47,6 +47,12 @@ public class PlayerScript : MonoBehaviour
         leftHP = Sea.GetComponent<SeaScript>().leftHP;
         rightHP = Sea.GetComponent<SeaScript>().rightHP;
         totalHP = leftHP + rightHP;
+
+        if (leftHP == 0)
+            leftDestroyed = true;
+
+        if (rightHP == 0)
+            rightDestroyed = true;
 
     }
 
