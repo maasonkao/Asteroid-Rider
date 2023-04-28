@@ -36,12 +36,12 @@ public class SeaScript : MonoBehaviour
         int tempLeft = 0, tempRight = 0;
         for (int i = 0; i < leftSea.Count(); i++)
         {
-            if (leftSea[i].GetComponent<TileScript>().GetTileType() == TileScript.TileType.shipTile)
+            if (leftSea[i].GetComponent<TileScript>().GetTileType() == TileType.shipTile)
             {
                 tempLeft++;
             }
 
-            if (rightSea[i].GetComponent<TileScript>().GetTileType() == TileScript.TileType.shipTile)
+            if (rightSea[i].GetComponent<TileScript>().GetTileType() == TileType.shipTile)
             {
                 tempRight++;
             }

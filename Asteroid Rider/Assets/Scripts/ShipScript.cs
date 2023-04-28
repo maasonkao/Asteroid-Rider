@@ -124,7 +124,7 @@ public class ShipScript : MonoBehaviour
         int tempDamge = 0;
         foreach(GameObject obj in touchingTiles)
         {
-            if (obj.GetComponent<TileScript>().GetTileType() == TileScript.TileType.hitTile)
+            if (obj.GetComponent<TileScript>().GetTileType() == TileType.hitTile)
                 tempDamge++;
         }
         damage = tempDamge;

@@ -2,6 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TileType
+{
+    unknown = 0,
+    seaTile = 10,
+    shipTile = 20,
+    missTile = 30,
+    hitTile = 40,
+    radarTile = 50,
+};
+
 public class TileScript : MonoBehaviour
 {
     [SerializeField] private string tileName;
@@ -9,15 +19,7 @@ public class TileScript : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     private int overlap = 0;
 
-    public enum TileType 
-    { 
-        unknown = 0,
-        seaTile = 10,
-        shipTile = 20,
-        missTile = 30,
-        hitTile = 40,
-        radarTile = 50,
-    };
+
 
 
     private void Start()

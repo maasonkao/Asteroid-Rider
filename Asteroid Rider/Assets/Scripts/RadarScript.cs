@@ -76,20 +76,20 @@ public class RadarScript : MonoBehaviour
         GameObject targetRadarTile = radarTiles.Where(obj => obj.name == tileName).FirstOrDefault();
         GameObject targetSeaTile = seaTiles.Where(obj => obj.name == tileName).FirstOrDefault();
 
-        TileScript.TileType seaTileType = targetSeaTile.GetComponent<TileScript>().GetTileType();
+        TileType seaTileType = targetSeaTile.GetComponent<TileScript>().GetTileType();
 
         switch (seaTileType)
         {
-            case TileScript.TileType.seaTile:
-                targetSeaTile.GetComponent<TileScript>().SetTileType(TileScript.TileType.missTile);
+            case TileType.seaTile:
+                targetSeaTile.GetComponent<TileScript>().SetTileType(TileType.missTile);
                 hasShot = true;
                 break;
-            case TileScript.TileType.shipTile:
-                targetSeaTile.GetComponent<TileScript>().SetTileType(TileScript.TileType.hitTile);
+            case TileType.shipTile:
+                targetSeaTile.GetComponent<TileScript>().SetTileType(TileType.hitTile);
                 hasShot = true;
                 break;
-            case TileScript.TileType.missTile:
-            case TileScript.TileType.hitTile:
+            case TileType.missTile:
+            case TileType.hitTile:
                 gameManager.SetText("You already shot this tile!");
                 break;
             default:
