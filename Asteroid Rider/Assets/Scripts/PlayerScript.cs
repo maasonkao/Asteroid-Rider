@@ -27,8 +27,8 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
-        radarLocations.Add(this.transform.position + new Vector3(-radarPos, 0, 0));
-        radarLocations.Add(this.transform.position + new Vector3(radarPos, 0, 0));
+        radarLocations.Add(this.transform.position + new Vector3(-8.9f, -4.4f, 0));
+        radarLocations.Add(this.transform.position + new Vector3(2.1f, -4.4f, 0));
 
         string shipString = playerName + "_Ship";
         shipList = GameObject.FindGameObjectsWithTag(shipString).ToList();
