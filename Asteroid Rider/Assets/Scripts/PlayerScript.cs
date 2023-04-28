@@ -39,6 +39,8 @@ public class PlayerScript : MonoBehaviour
     {
         if (canPlaceShips)
             PlaceShips();
+/*        else if (!RadarLeft.activeSelf)
+            TurnOnRadar();*/
         GetHP();
     }
 
@@ -62,12 +64,9 @@ public class PlayerScript : MonoBehaviour
         RadarRight.SetActive(true);
     }
 
-    public void SetRadar(GameObject radar, bool isLeft)
+    public void SetRadar()
     {
-        if (isLeft)
-            RadarLeft = radar;
-        else
-            RadarRight = radar;
+
     }
 
     public void PlaceShips()

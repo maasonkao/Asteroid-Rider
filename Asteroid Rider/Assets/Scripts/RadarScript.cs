@@ -13,7 +13,7 @@ public class RadarScript : MonoBehaviour
     [SerializeField] private string seaName;
 
     private GameManager gameManager;
-    private SeaScript seaScript;
+    [SerializeField] private SeaScript seaScript;
 
     public TextMeshProUGUI radarText;
     public bool hasShot, isLeft, isDestroyed;
@@ -23,10 +23,13 @@ public class RadarScript : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         grid = GameObject.Find("GameManager").GetComponent<Grid>();
 
-        seaName = "P" + name[1] + "_Sea";
+        seaName = "P" + name[1] + " Sea";
         seaScript = GameObject.Find(seaName).GetComponent<SeaScript>();
-        
-        radarTiles = GameObject.FindGameObjectsWithTag(name).ToList<GameObject>();
+
+        foreach (Transform child in transform)
+        {
+            radarTiles.Add(child.gameObject);
+        }
 
         switch (name[2])
         {
@@ -49,6 +52,9 @@ public class RadarScript : MonoBehaviour
 
     private void Update()
     {
+        if ((isLeft && seaScript.leftDestroyed) || (!isLeft && seaScript.rightDestroyed))
+            isDestroyed = true;
+        
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
