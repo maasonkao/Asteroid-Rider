@@ -8,8 +8,6 @@ using TMPro;
 [CreateAssetMenu(fileName = "Radar", menuName = "Radar")]
 public class Radar : ScriptableObject
 {
-
-    public TextMeshProUGUI radarText;
     //left = true | right = false
     public bool hasShot, ownerSide, targetSide;
     public string seaName;
