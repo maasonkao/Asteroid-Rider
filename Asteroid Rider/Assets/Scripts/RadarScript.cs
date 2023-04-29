@@ -23,7 +23,7 @@ public class RadarScript : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         grid = GameObject.Find("GameManager").GetComponent<Grid>();
 
-        seaName = "P" + name[1] + " Sea";
+        seaName = GetComponentInParent<PlayerScript>().Sea.name;
         seaScript = GameObject.Find(seaName).GetComponent<SeaScript>();
 
         foreach (Transform child in transform)
@@ -31,7 +31,7 @@ public class RadarScript : MonoBehaviour
             radarTiles.Add(child.gameObject);
         }
 
-        switch (name[2])
+        switch (name[0])
         {
             case 'L':
                 isLeft = true;

@@ -22,25 +22,29 @@ public class PlayerScript : MonoBehaviour
     public bool isAlive = true;
     public bool canPlaceShips = true;
     public bool leftDestroyed, rightDestroyed;
-    private static float radarPos = 5.5f;
+    private GameManager gameManager;
 
 
     void Start()
     {
-        radarLocations.Add(this.transform.position + new Vector3(-8.9f, -4.4f, 0));
-        radarLocations.Add(this.transform.position + new Vector3(2.1f, -4.4f, 0));
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
+        radarLocations.Add(this.transform.position + new Vector3(-5.5f, 0, 0));
+        radarLocations.Add(this.transform.position + new Vector3(5.5f, 0, 0));
 
         string shipString = playerName + "_Ship";
         shipList = GameObject.FindGameObjectsWithTag(shipString).ToList();
-        RadarLeft.SetActive(false);
-        RadarRight.SetActive(false);
+
     }
     void Update()
     {
         if (canPlaceShips)
             PlaceShips();
-/*        else if (!RadarLeft.activeSelf)
-            TurnOnRadar();*/
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            SetLeftRadar();
+            SetRightRadar();
+        }
         GetHP();
     }
 
@@ -58,15 +62,25 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    private void TurnOnRadar()
+
+    public void SetLeftRadar()
     {
-        RadarLeft.SetActive(true);
-        RadarRight.SetActive(true);
+        PlayerScript leftPlayer = gameManager.GetPlayerLeft();
+
+        if (!leftPlayer.leftDestroyed)
+            Instantiate(leftPlayer.RadarRight, radarLocations[0], transform.rotation);
+        else
+            Instantiate(leftPlayer.RadarLeft, radarLocations[0], transform.rotation);
     }
 
-    public void SetRadar()
+    public void SetRightRadar()
     {
+        PlayerScript rightPlayer = gameManager.GetPlayerLeft();
 
+        if (!rightPlayer.leftDestroyed)
+            Instantiate(rightPlayer.RadarLeft, radarLocations[1], transform.rotation);
+        else
+            Instantiate(rightPlayer.RadarRight, radarLocations[1], transform.rotation);
     }
 
     public void PlaceShips()
