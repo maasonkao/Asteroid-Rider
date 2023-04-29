@@ -10,10 +10,9 @@ public class Radar : ScriptableObject
 {
     //left = true | right = false
     public bool hasShot, ownerSide, targetSide;
-    public string seaName;
+    public string ownerSeaName, targetSeaName;
 
-    public List<GameObject> radarTiles;
-    public List<GameObject> seaTiles;
+
 
 
 }
