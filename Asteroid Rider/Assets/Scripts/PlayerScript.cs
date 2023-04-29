@@ -75,7 +75,7 @@ public class PlayerScript : MonoBehaviour
 
     public void SetRightRadar()
     {
-        PlayerScript rightPlayer = gameManager.GetPlayerLeft();
+        PlayerScript rightPlayer = gameManager.GetPlayerRight();
 
         if (!rightPlayer.leftDestroyed)
             Instantiate(rightPlayer.RadarLeft, radarLocations[1], transform.rotation);

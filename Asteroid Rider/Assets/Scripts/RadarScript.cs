@@ -23,8 +23,7 @@ public class RadarScript : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         grid = GameObject.Find("GameManager").GetComponent<Grid>();
 
-        seaName = GetComponentInParent<PlayerScript>().Sea.name;
-        seaScript = GameObject.Find(seaName).GetComponent<SeaScript>();
+        seaScript = GameObject.FindGameObjectWithTag(seaName).GetComponent<SeaScript>();
 
         foreach (Transform child in transform)
         {

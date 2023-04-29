@@ -1159,7 +1159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &432580123
 Transform:
   m_ObjectHideFlags: 0
@@ -7061,6 +7061,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3713208352916373079}
     m_Modifications:
+    - target: {fileID: -8513985076612724417, guid: ef8f4e14563c3af4494985bb91fd49c8, type: 3}
+      propertyPath: seaName
+      value: P4_Sea
+      objectReference: {fileID: 0}
     - target: {fileID: 8313158113005020225, guid: ef8f4e14563c3af4494985bb91fd49c8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8114,6 +8118,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right Radar Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 3346198603095007110, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
+      propertyPath: m_TagString
+      value: Radar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344595793117331915, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
+      propertyPath: seaName
+      value: P4_Sea
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
 --- !u!4 &794065715 stripped
@@ -8128,6 +8140,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 380145951}
     m_Modifications:
+    - target: {fileID: -8513985076612724417, guid: ef8f4e14563c3af4494985bb91fd49c8, type: 3}
+      propertyPath: seaName
+      value: P2_Sea
+      objectReference: {fileID: 0}
     - target: {fileID: 8313158113005020225, guid: ef8f4e14563c3af4494985bb91fd49c8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8797,6 +8813,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right Radar Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 3346198603095007110, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
+      propertyPath: m_TagString
+      value: Radar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344595793117331915, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
+      propertyPath: seaName
+      value: P1_Sea
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
 --- !u!1 &1049533094 stripped
@@ -8929,6 +8953,14 @@ PrefabInstance:
     - target: {fileID: 3346198603095007110, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
       propertyPath: m_Name
       value: Right Radar Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346198603095007110, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
+      propertyPath: m_TagString
+      value: Radar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344595793117331915, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
+      propertyPath: seaName
+      value: P2_Sea
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
@@ -9530,6 +9562,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 852123462}
     m_Modifications:
+    - target: {fileID: -8513985076612724417, guid: ef8f4e14563c3af4494985bb91fd49c8, type: 3}
+      propertyPath: seaName
+      value: P1_Sea
+      objectReference: {fileID: 0}
     - target: {fileID: 8313158113005020225, guid: ef8f4e14563c3af4494985bb91fd49c8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -9597,6 +9633,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3985778818758379664}
     m_Modifications:
+    - target: {fileID: -8513985076612724417, guid: ef8f4e14563c3af4494985bb91fd49c8, type: 3}
+      propertyPath: seaName
+      value: P3_Sea
+      objectReference: {fileID: 0}
     - target: {fileID: 8313158113005020225, guid: ef8f4e14563c3af4494985bb91fd49c8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -9706,6 +9746,14 @@ PrefabInstance:
     - target: {fileID: 3346198603095007110, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
       propertyPath: m_Name
       value: Right Radar Prefab_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346198603095007110, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
+      propertyPath: m_TagString
+      value: Radar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344595793117331915, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
+      propertyPath: seaName
+      value: P3_Sea
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa09222d1e59da14eb9a01096464c2a2, type: 3}
