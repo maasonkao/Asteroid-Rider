@@ -65,7 +65,7 @@ public class RadarScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Clicked");
+        
         if (hasShot)
         {
             gameManager.SetText("You have already used this Radar!");
@@ -79,6 +79,7 @@ public class RadarScript : MonoBehaviour
                 CheckTile(thing.name);
             }
         }
+        Debug.Log(mousePos);
     }
 
     private void CheckTile(string tileName)
@@ -103,7 +104,7 @@ public class RadarScript : MonoBehaviour
                 gameManager.SetText("You already shot this tile!");
                 break;
             default:
-                Debug.LogWarning("Tyle Type not assigned in radar switch case.\n Error: " + seaTileType);
+                Debug.LogWarning("Tile Type not assigned in radar switch case.\n Error: " + seaTileType);
                 break;
         }
 
