@@ -48,7 +48,10 @@ public class RadarScript : MonoBehaviour
 
         }
 
-        radarText.text = seaName;
+        if(isLeft)
+            radarText.text = seaName + " Left";
+        else
+            radarText.text = seaName + " Right";
     }
 
     private void Update()
