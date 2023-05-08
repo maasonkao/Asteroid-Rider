@@ -1120,6 +1120,7 @@ MonoBehaviour:
   canPlaceShips: 1
   leftDestroyed: 0
   rightDestroyed: 0
+  gameManager: {fileID: 2047063270}
 --- !u!4 &380145951
 Transform:
   m_ObjectHideFlags: 0
@@ -8388,7 +8389,7 @@ MonoBehaviour:
   playerName: P1
   playerNum: 1
   Sea: {fileID: 172297589}
-  RadarLeft: {fileID: 0}
+  RadarLeft: {fileID: 1330008817}
   RadarRight: {fileID: 1049533094}
   shipList: []
   totalHP: 0
@@ -8399,6 +8400,7 @@ MonoBehaviour:
   canPlaceShips: 1
   leftDestroyed: 0
   rightDestroyed: 0
+  gameManager: {fileID: 2047063270}
 --- !u!1 &894843291
 GameObject:
   m_ObjectHideFlags: 0
@@ -9162,6 +9164,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2026984250110292691, guid: 0845355c012bdbd4bae763add087bfdc, type: 3}
   m_PrefabInstance: {fileID: 1326840540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1330008817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8313158113005020227, guid: ef8f4e14563c3af4494985bb91fd49c8, type: 3}
+  m_PrefabInstance: {fileID: 1352225528}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1330008818 stripped
 Transform:
@@ -11222,6 +11229,7 @@ MonoBehaviour:
   canPlaceShips: 1
   leftDestroyed: 0
   rightDestroyed: 0
+  gameManager: {fileID: 2047063270}
 --- !u!4 &3713208352916373079
 Transform:
   m_ObjectHideFlags: 0
@@ -11357,6 +11365,7 @@ MonoBehaviour:
   canPlaceShips: 1
   leftDestroyed: 0
   rightDestroyed: 0
+  gameManager: {fileID: 2047063270}
 --- !u!1 &3985778818758379667
 GameObject:
   m_ObjectHideFlags: 0

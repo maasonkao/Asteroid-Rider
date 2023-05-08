@@ -22,12 +22,12 @@ public class PlayerScript : MonoBehaviour
     public bool isAlive = true;
     public bool canPlaceShips = true;
     public bool leftDestroyed, rightDestroyed;
-    private GameManager gameManager;
+    [SerializeField] private GameManager gameManager;
 
 
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        //gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
         radarLocations.Add(Sea.transform.position + new Vector3(-9.9f, 0, 0));
         radarLocations.Add(Sea.transform.position + new Vector3(9.9f, 0, 0));
@@ -65,7 +65,7 @@ public class PlayerScript : MonoBehaviour
 
     public void SetLeftRadar()
     {
-        PlayerScript leftPlayer = gameManager.GetPlayerLeft();
+        PlayerScript leftPlayer = gameManager.GetPlayerLeft(playerNum);
 
         if (!leftPlayer.leftDestroyed)
             Instantiate(leftPlayer.RadarRight, radarLocations[0], transform.rotation);
@@ -75,7 +75,7 @@ public class PlayerScript : MonoBehaviour
 
     public void SetRightRadar()
     {
-        PlayerScript rightPlayer = gameManager.GetPlayerRight();
+        PlayerScript rightPlayer = gameManager.GetPlayerRight(playerNum);
 
         if (!rightPlayer.leftDestroyed)
             Instantiate(rightPlayer.RadarLeft, radarLocations[1], transform.rotation);

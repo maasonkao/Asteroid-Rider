@@ -102,6 +102,35 @@ public class GameManager : MonoBehaviour
     {
         //Set camera to player
         mainCamera.transform.position = playerList[currentTurn].transform.position + new Vector3(0, 0, -10);
+        Blah();
+    }
+
+    public PlayerScript GetPlayerLeft(int player)
+    {
+        for(int i=0; i<playerList.Count; i++)
+        {
+            if(playerList[i].GetComponent<PlayerScript>().playerNum == player)
+                if(i == 0)
+                    return playerList[playerList.Count - 1].GetComponent<PlayerScript>();
+                else
+                    return playerList[i - 1].GetComponent<PlayerScript>();
+        }
+        Debug.LogError("Could not find left player!");
+        return null;
+    }
+
+    public PlayerScript GetPlayerRight(int player)
+    {
+        for(int i=0; i<playerList.Count; i++)
+        {
+            if(playerList[i].GetComponent<PlayerScript>().playerNum == player)
+                if(i == playerList.Count - 1)
+                    return playerList[0].GetComponent<PlayerScript>();
+                else
+                    return playerList[i + 1].GetComponent<PlayerScript>();
+        }
+        Debug.LogError("Could not find right player!");
+        return null;
     }
 
     public PlayerScript GetPlayerLeft()
@@ -142,5 +171,9 @@ public class GameManager : MonoBehaviour
                 timer = 0;
             }
         }
+    }
+
+    public void Blah(){
+        SetText("Blaaaaah");
     }
 }
