@@ -12,7 +12,7 @@ public class Radar : ScriptableObject
     public bool hasShot, ownerSide, targetSide;
     public string ownerSeaName, targetSeaName;
 
-
+    public List<GameObject> seaTiles;
 
 
 }

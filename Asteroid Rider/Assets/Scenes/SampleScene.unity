@@ -9813,6 +9813,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7725843989771150912, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8189636579257564166, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
       propertyPath: m_Name
       value: Two Dot Ship
