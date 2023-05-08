@@ -27,6 +27,8 @@ public class RadarScript : MonoBehaviour
 
         foreach (Transform child in transform)
         {
+            if(child.gameObject.name == "Canvas")
+                continue;
             radarTiles.Add(child.gameObject);
         }
 
@@ -63,6 +65,7 @@ public class RadarScript : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log("Clicked");
         if (hasShot)
         {
             gameManager.SetText("You have already used this Radar!");
