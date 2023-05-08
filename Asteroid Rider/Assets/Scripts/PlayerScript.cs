@@ -68,9 +68,15 @@ public class PlayerScript : MonoBehaviour
         PlayerScript leftPlayer = gameManager.GetPlayerLeft(playerNum);
 
         if (!leftPlayer.leftDestroyed)
-            Instantiate(leftPlayer.RadarRight, radarLocations[0], transform.rotation);
+        {
+            GameObject leftRadar = Instantiate(leftPlayer.RadarRight, radarLocations[0], transform.rotation) as GameObject;
+            leftRadar.SetActive(true);
+        }
         else
-            Instantiate(leftPlayer.RadarLeft, radarLocations[0], transform.rotation);
+        {
+             GameObject leftRadar = Instantiate(leftPlayer.RadarLeft, radarLocations[0], transform.rotation) as GameObject;
+             leftRadar.SetActive(true);
+        }
     }
 
     public void SetRightRadar()
@@ -78,9 +84,15 @@ public class PlayerScript : MonoBehaviour
         PlayerScript rightPlayer = gameManager.GetPlayerRight(playerNum);
 
         if (!rightPlayer.leftDestroyed)
-            Instantiate(rightPlayer.RadarLeft, radarLocations[1], transform.rotation);
+        {
+            GameObject rightRadar = Instantiate(rightPlayer.RadarLeft, radarLocations[1], transform.rotation) as GameObject;
+            rightRadar.SetActive(true);
+        }
         else
-            Instantiate(rightPlayer.RadarRight, radarLocations[1], transform.rotation);
+        {
+            GameObject rightRadar = Instantiate(rightPlayer.RadarRight, radarLocations[1], transform.rotation) as GameObject;
+            rightRadar.SetActive(true);
+        }
     }
 
     public void PlaceShips()

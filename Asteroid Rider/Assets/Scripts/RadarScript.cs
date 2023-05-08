@@ -68,13 +68,14 @@ public class RadarScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
+        Vector3Int mousePos = GetMousePosition();
+        Debug.Log(mousePos);
+
         if (hasShot)
         {
             gameManager.SetText("You have already used this Radar!");
             return;
         }
-        Vector3Int mousePos = GetMousePosition();
 
         foreach (var thing in radarTiles){
             if (grid.LocalToCell(thing.transform.position) == mousePos)
@@ -82,7 +83,6 @@ public class RadarScript : MonoBehaviour
                 CheckTile(thing.name);
             }
         }
-        Debug.Log(mousePos);
     }
 
     private void CheckTile(string tileName)
@@ -114,6 +114,7 @@ public class RadarScript : MonoBehaviour
         seaTileType = targetSeaTile.GetComponent<TileScript>().GetTileType();
         targetRadarTile.GetComponent<TileScript>().SetTileType(seaTileType);
     }
+
     Vector3Int GetMousePosition()
     {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
