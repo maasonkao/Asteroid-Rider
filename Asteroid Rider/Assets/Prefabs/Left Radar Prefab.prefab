@@ -246,7 +246,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8313158113005020225}
   - component: {fileID: -8513985076612724417}
-  - component: {fileID: 5993186722035345322}
   - component: {fileID: 3159625630151819017}
   m_Layer: 0
   m_Name: Left Radar Prefab
@@ -324,27 +323,6 @@ MonoBehaviour:
   hasShot: 0
   isLeft: 1
   isDestroyed: 0
---- !u!50 &5993186722035345322
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313158113005020227}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &3159625630151819017
 BoxCollider2D:
   m_ObjectHideFlags: 0
