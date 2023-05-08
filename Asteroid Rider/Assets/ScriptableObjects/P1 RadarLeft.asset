@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3df44b0bafd8cd4f86563b519f7e66c, type: 3}
-  m_Name: Radar
+  m_Name: P1 RadarLeft
   m_EditorClassIdentifier: 
-  radarText: {fileID: 0}
   hasShot: 0
-  ownerSide: 0
-  targetSide: 0
-  seaName: 
-  radarTiles: []
+  targetSide: 1
+  targetSeaName: P1 Sea
   seaTiles: []

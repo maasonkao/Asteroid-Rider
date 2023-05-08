@@ -9,8 +9,8 @@ using TMPro;
 public class Radar : ScriptableObject
 {
     //left = true | right = false
-    public bool hasShot, ownerSide, targetSide;
-    public string ownerSeaName, targetSeaName;
+    public bool hasShot, targetSide;
+    public string targetSeaName;
 
     public List<GameObject> seaTiles;
 
