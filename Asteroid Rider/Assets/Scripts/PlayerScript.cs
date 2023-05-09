@@ -12,6 +12,8 @@ public class PlayerScript : MonoBehaviour
     public GameObject Sea;
     public GameObject RadarLeft;
     public GameObject RadarRight;
+    public GameObject TargetRadarLeft;
+    public GameObject TargetRadarRight;
 
     public List<GameObject> shipList;
     public int totalHP, leftHP, rightHP;
@@ -42,9 +44,15 @@ public class PlayerScript : MonoBehaviour
             PlaceShips();
         if (Input.GetKeyDown(KeyCode.O))
         {
-            SetLeftRadar();
-            SetRightRadar();
+            canPlaceShips = false;
+            SetTargetRadarLeft();
+            SetTargetRadarRight();
         }
+        if(!canPlaceShips && TargetRadarLeft == null)
+            SetTargetRadarLeft();
+        if(!canPlaceShips && TargetRadarRight == null)
+            SetTargetRadarRight();
+
         GetHP();
     }
 
@@ -63,35 +71,35 @@ public class PlayerScript : MonoBehaviour
     }
 
 
-    public void SetLeftRadar()
+    public void SetTargetRadarLeft()
     {
         PlayerScript leftPlayer = gameManager.GetPlayerLeft(playerNum);
 
         if (!leftPlayer.rightDestroyed)
         {
-            GameObject leftRadar = Instantiate(leftPlayer.RadarRight, radarLocations[0], transform.rotation) as GameObject;
-            leftRadar.SetActive(true);
+            TargetRadarLeft = Instantiate(leftPlayer.RadarRight, radarLocations[0], transform.rotation) as GameObject;
+            TargetRadarLeft.SetActive(true);
         }
         else
         {
-             GameObject leftRadar = Instantiate(leftPlayer.RadarLeft, radarLocations[0] + new Vector3(4.4f, 0, 0), transform.rotation) as GameObject;
-             leftRadar.SetActive(true);
+            TargetRadarLeft = Instantiate(leftPlayer.RadarLeft, radarLocations[0] + new Vector3(4.4f, 0, 0), transform.rotation) as GameObject;
+            TargetRadarLeft.SetActive(true);
         }
     }
 
-    public void SetRightRadar()
+    public void SetTargetRadarRight()
     {
         PlayerScript rightPlayer = gameManager.GetPlayerRight(playerNum);
 
         if (!rightPlayer.leftDestroyed)
         {
-            GameObject rightRadar = Instantiate(rightPlayer.RadarLeft, radarLocations[1], transform.rotation) as GameObject;
-            rightRadar.SetActive(true);
+            TargetRadarRight = Instantiate(rightPlayer.RadarLeft, radarLocations[1], transform.rotation) as GameObject;
+            TargetRadarRight.SetActive(true);
         }
         else
         {
-            GameObject rightRadar = Instantiate(rightPlayer.RadarRight, radarLocations[1] + new Vector3(-4.4f, 0, 0), transform.rotation) as GameObject;
-            rightRadar.SetActive(true);
+            TargetRadarRight = Instantiate(rightPlayer.RadarRight, radarLocations[1] + new Vector3(-4.4f, 0, 0), transform.rotation) as GameObject;
+            TargetRadarRight.SetActive(true);
         }
     }
 
