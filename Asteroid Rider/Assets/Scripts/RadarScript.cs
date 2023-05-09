@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using TMPro;
 
-public class RadarScript : MonoBehaviour
+public class RadarScript : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private List<GameObject> radarTiles;
     [SerializeField] private List<GameObject> seaTiles;
@@ -67,32 +68,14 @@ public class RadarScript : MonoBehaviour
         
 
         if (Input.GetKeyDown(KeyCode.Space))
-        {
             hasShot = false;
-        }
+        
     }
-/*
-    public void OnClick(InputAction.CallbackContext context)
-    {
-        if (!context.started) return;
 
-        var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-        if (!rayHit.collider) return;
-
-        if (hasShot)
-        {
-            gameManager.SetText("You have already used this Radar!");
-            return;
-        }
-        CheckTile(rayHit.collider.gameObject.name);
-
-        Debug.Log(rayHit.collider.gameObject.name);
-    }*/
-
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData pointerEventData)
     {
         Vector3Int mousePos = GetMousePosition();
-        Debug.Log(mousePos);
+        Debug.Log("mousePos: " + mousePos);
         if (hasShot)
         {
             gameManager.SetText("You have already used this Radar!");
@@ -139,7 +122,10 @@ public class RadarScript : MonoBehaviour
 
     Vector3Int GetMousePosition()
     {
-        Vector3 mouseWorldPos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        Mouse mouse = Mouse.current;
+        Vector3 mouseWorldPos = _mainCamera.ScreenToWorldPoint(mouse.position.ReadValue());
+        Debug.Log("Cell Center Local: " + grid.GetCellCenterLocal(grid.LocalToCell(mouseWorldPos)));
+
         return grid.LocalToCell(mouseWorldPos);
     }
 
