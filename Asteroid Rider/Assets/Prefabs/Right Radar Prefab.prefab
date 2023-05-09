@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3346198603095007108}
   - component: {fileID: 5344595793117331915}
   - component: {fileID: 973177484535671183}
+  - component: {fileID: -9006035890105893859}
   m_Layer: 0
   m_Name: Right Radar Prefab
   m_TagString: P1_Sea
@@ -100,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.1542318, y: -0.026271343}
+  m_Offset: {x: 2.132223, y: -0.061570168}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -111,8 +112,29 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.43276, y: 8.863822}
+  m_Size: {x: 4.826401, y: 9.478516}
   m_EdgeRadius: 0
+--- !u!50 &-9006035890105893859
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346198603095007110}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3613743656551456131
 GameObject:
   m_ObjectHideFlags: 0
