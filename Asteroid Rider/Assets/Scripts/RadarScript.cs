@@ -68,7 +68,7 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
 
         if (Input.GetKeyDown(KeyCode.Space))
             hasShot = false;
-        
+        RadarParity();
     }
 
     public void OnPointerDown(PointerEventData pointerEventData)
@@ -100,10 +100,12 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
             case TileType.seaTile:
                 targetSeaTile.GetComponent<TileScript>().SetTileType(TileType.missTile);
                 hasShot = true;
+                gameManager.SetText("Miss!");
                 break;
             case TileType.shipTile:
                 targetSeaTile.GetComponent<TileScript>().SetTileType(TileType.hitTile);
                 hasShot = true;
+                gameManager.SetText("Hit!");
                 break;
             case TileType.missTile:
             case TileType.hitTile:
@@ -132,5 +134,30 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
         radarText.text += " has been destroyed!";
         yield return new WaitForSeconds(3);
         Destroy(gameObject);
+        yield return new WaitForSeconds(1);
+    }
+
+    private void RadarParity()
+    {
+        foreach(GameObject tile in seaTiles)
+        {
+            GameObject targetRadarTile = radarTiles.Where(obj => obj.name == tile.name).FirstOrDefault();
+            switch(tile.GetComponent<TileScript>().GetTileType())
+            {
+                case TileType.seaTile:
+                case TileType.shipTile:
+                    break;
+                case TileType.missTile:
+                    targetRadarTile.GetComponent<TileScript>().SetTileType(TileType.missTile);
+                    break;
+                case TileType.hitTile:
+                    targetRadarTile.GetComponent<TileScript>().SetTileType(TileType.hitTile);
+                    break;
+                default:
+                    Debug.LogWarning("Tile Type unknown");
+                    break;
+
+            }
+        }
     }
 }

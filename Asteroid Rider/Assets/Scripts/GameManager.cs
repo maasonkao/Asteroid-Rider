@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour
     private void StatusText()
     {
         if(currentPlayer.canPlaceShips && !altText)
-            statusText.text = "Place your ships";
+            statusText.text = "Click and drag to place your ships. Press 'R' to rotate.";
         else if (!altText)
             statusText.text = "Click on a radar tile to fire";
         else

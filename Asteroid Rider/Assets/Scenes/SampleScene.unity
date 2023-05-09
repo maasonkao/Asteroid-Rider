@@ -1111,6 +1111,8 @@ MonoBehaviour:
   Sea: {fileID: 1257392987}
   RadarLeft: {fileID: 2082669286}
   RadarRight: {fileID: 961142063}
+  TargetRadarLeft: {fileID: 0}
+  TargetRadarRight: {fileID: 0}
   shipList: []
   totalHP: 0
   leftHP: 0
@@ -8408,6 +8410,8 @@ MonoBehaviour:
   Sea: {fileID: 172297589}
   RadarLeft: {fileID: 1330008817}
   RadarRight: {fileID: 1049533094}
+  TargetRadarLeft: {fileID: 0}
+  TargetRadarRight: {fileID: 0}
   shipList: []
   totalHP: 0
   leftHP: 0
@@ -8436,7 +8440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &894843292
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11169,6 +11173,8 @@ MonoBehaviour:
   Sea: {fileID: 1871216725}
   RadarLeft: {fileID: 160050043}
   RadarRight: {fileID: 1358930012}
+  TargetRadarLeft: {fileID: 0}
+  TargetRadarRight: {fileID: 0}
   shipList: []
   totalHP: 0
   leftHP: 0
@@ -11305,6 +11311,8 @@ MonoBehaviour:
   Sea: {fileID: 250926245}
   RadarLeft: {fileID: 256171602}
   RadarRight: {fileID: 691123203}
+  TargetRadarLeft: {fileID: 0}
+  TargetRadarRight: {fileID: 0}
   shipList: []
   totalHP: 0
   leftHP: 0
