@@ -247,7 +247,6 @@ GameObject:
   - component: {fileID: 8313158113005020225}
   - component: {fileID: -8513985076612724417}
   - component: {fileID: 6438680905095144581}
-  - component: {fileID: 5173583286266804374}
   m_Layer: 0
   m_Name: Left Radar Prefab
   m_TagString: Radar
@@ -345,32 +344,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &5173583286266804374
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313158113005020227}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -2.2493138, y: -0.043788433}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.090658, y: 11.09201}
-  m_EdgeRadius: 0
 --- !u!1001 &8313158111987179952
 PrefabInstance:
   m_ObjectHideFlags: 0

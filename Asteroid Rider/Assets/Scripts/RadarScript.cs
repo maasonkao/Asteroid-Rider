@@ -39,20 +39,14 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
             radarTiles.Add(child.gameObject);
         }
 
-        switch (name[0])
+        switch (isLeft)
         {
-            case 'L':
-                isLeft = true;
+            case true:
                 seaTiles = seaScript.leftSea;
                 break;
-            case 'R':
-                isLeft = false;
+            case false:
                 seaTiles = seaScript.rightSea;
                 break;
-            default:
-                Debug.LogError("Left or right not set!");
-                break;
-
         }
 
         if(isLeft)
@@ -75,7 +69,6 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
     public void OnPointerDown(PointerEventData pointerEventData)
     {
         Vector3Int mousePos = GetMousePosition();
-        Debug.Log("mousePos: " + mousePos);
         if (hasShot)
         {
             gameManager.SetText("You have already used this Radar!");
@@ -124,7 +117,6 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
     {
         Mouse mouse = Mouse.current;
         Vector3 mouseWorldPos = _mainCamera.ScreenToWorldPoint(mouse.position.ReadValue());
-        Debug.Log("Cell Center Local: " + grid.GetCellCenterLocal(grid.LocalToCell(mouseWorldPos)));
 
         return grid.LocalToCell(mouseWorldPos);
     }
