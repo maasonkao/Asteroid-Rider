@@ -48,5 +48,10 @@ public class SeaScript : MonoBehaviour
         }
         leftHP = tempLeft;
         rightHP = tempRight;
+
+        if(leftHP == 0)
+            leftDestroyed = true;
+        if(rightHP == 0)
+            rightDestroyed = true;
     }
 }

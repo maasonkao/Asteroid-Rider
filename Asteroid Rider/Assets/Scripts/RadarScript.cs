@@ -53,12 +53,16 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
             radarText.text = seaName + " Left";
         else
             radarText.text = seaName + " Right";
+            name = radarText.text;
     }
 
     private void Update()
     {
-        if ((isLeft && seaScript.leftDestroyed) || (!isLeft && seaScript.rightDestroyed))
+        if (((isLeft && seaScript.leftDestroyed) || (!isLeft && seaScript.rightDestroyed)) && !isDestroyed)
+        {
             isDestroyed = true;
+            StartCoroutine(DestroyRadar());
+        }
         
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -121,5 +125,11 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
         return grid.LocalToCell(mouseWorldPos);
     }
 
-
+    IEnumerator DestroyRadar()
+    {
+        Debug.Log("DestroyRadar Coroutine started");
+        radarText.text += " has been destroyed!";
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
+    }
 }
