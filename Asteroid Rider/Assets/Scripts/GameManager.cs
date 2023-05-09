@@ -102,7 +102,6 @@ public class GameManager : MonoBehaviour
     {
         //Set camera to player
         mainCamera.transform.position = playerList[currentTurn].transform.position + new Vector3(0, 0, -10);
-        Blah();
     }
 
     public PlayerScript GetPlayerLeft(int player)
@@ -171,9 +170,5 @@ public class GameManager : MonoBehaviour
                 timer = 0;
             }
         }
-    }
-
-    public void Blah(){
-        SetText("Blaaaaah");
     }
 }

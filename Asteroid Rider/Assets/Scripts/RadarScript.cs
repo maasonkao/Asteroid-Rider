@@ -14,11 +14,16 @@ public class RadarScript : MonoBehaviour
     [SerializeField] private string seaName;
 
     private GameManager gameManager;
+    private Camera _mainCamera;
     [SerializeField] private SeaScript seaScript;
 
     public TextMeshProUGUI radarText;
     public bool hasShot, isLeft, isDestroyed;
 
+    private void Awake()
+    {
+        _mainCamera = Camera.main;
+    }
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -66,22 +71,38 @@ public class RadarScript : MonoBehaviour
             hasShot = false;
         }
     }
-
-    private void OnMouseDown()
+/*
+    public void OnClick(InputAction.CallbackContext context)
     {
-        Vector3Int mousePos = GetMousePosition();
-        Debug.Log(mousePos);
+        if (!context.started) return;
+
+        var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
+        if (!rayHit.collider) return;
 
         if (hasShot)
         {
             gameManager.SetText("You have already used this Radar!");
             return;
         }
+        CheckTile(rayHit.collider.gameObject.name);
 
-        foreach (var thing in radarTiles){
-            if (grid.LocalToCell(thing.transform.position) == mousePos)
+        Debug.Log(rayHit.collider.gameObject.name);
+    }*/
+
+    private void OnMouseDown()
+    {
+        Vector3Int mousePos = GetMousePosition();
+        Debug.Log(mousePos);
+        if (hasShot)
+        {
+            gameManager.SetText("You have already used this Radar!");
+            return;
+        }
+
+        foreach (var tile in radarTiles){
+            if (grid.LocalToCell(tile.transform.position) == mousePos)
             {
-                CheckTile(thing.name);
+                CheckTile(tile.name);
             }
         }
     }
@@ -118,7 +139,7 @@ public class RadarScript : MonoBehaviour
 
     Vector3Int GetMousePosition()
     {
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mouseWorldPos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         return grid.LocalToCell(mouseWorldPos);
     }
 
