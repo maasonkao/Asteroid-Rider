@@ -67,14 +67,14 @@ public class PlayerScript : MonoBehaviour
     {
         PlayerScript leftPlayer = gameManager.GetPlayerLeft(playerNum);
 
-        if (!leftPlayer.leftDestroyed)
+        if (!leftPlayer.rightDestroyed)
         {
             GameObject leftRadar = Instantiate(leftPlayer.RadarRight, radarLocations[0], transform.rotation) as GameObject;
             leftRadar.SetActive(true);
         }
         else
         {
-             GameObject leftRadar = Instantiate(leftPlayer.RadarLeft, radarLocations[0], transform.rotation) as GameObject;
+             GameObject leftRadar = Instantiate(leftPlayer.RadarLeft, radarLocations[0] + new Vector3(4.4f, 0, 0), transform.rotation) as GameObject;
              leftRadar.SetActive(true);
         }
     }
@@ -90,7 +90,7 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            GameObject rightRadar = Instantiate(rightPlayer.RadarRight, radarLocations[1], transform.rotation) as GameObject;
+            GameObject rightRadar = Instantiate(rightPlayer.RadarRight, radarLocations[1] + new Vector3(-4.4f, 0, 0), transform.rotation) as GameObject;
             rightRadar.SetActive(true);
         }
     }

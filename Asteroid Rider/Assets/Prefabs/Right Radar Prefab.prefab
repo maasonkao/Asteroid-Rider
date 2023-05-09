@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -9006035890105893859}
   m_Layer: 0
   m_Name: Right Radar Prefab
-  m_TagString: P1_Sea
+  m_TagString: Radar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Right Radar Text
+  m_text: Right Radar Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -280,7 +280,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.15, y: -0.05}
+  m_AnchoredPosition: {x: 2.1499999, y: -0.05}
   m_SizeDelta: {x: 5, y: 11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8129194548103979247
@@ -705,7 +705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 1.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1115,7 +1115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 1.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1361,7 +1361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 1.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1525,7 +1525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 1.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1853,7 +1853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 1.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2017,7 +2017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 1.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2345,7 +2345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 1.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2673,7 +2673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 1.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 8984697336665712053, guid: 6df804b167ba589469d714e21dff5862, type: 3}
       propertyPath: m_LocalPosition.y

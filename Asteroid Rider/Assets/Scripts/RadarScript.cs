@@ -58,6 +58,7 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
 
     private void Update()
     {
+        //Change to unity action/event
         if (((isLeft && seaScript.leftDestroyed) || (!isLeft && seaScript.rightDestroyed)) && !isDestroyed)
         {
             isDestroyed = true;
