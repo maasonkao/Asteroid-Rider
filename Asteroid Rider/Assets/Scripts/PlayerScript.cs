@@ -114,6 +114,12 @@ public class PlayerScript : MonoBehaviour
 
     public void ReloadRadar()
     {
+        if (!canPlaceShips && TargetRadarLeft == null)
+            SetTargetRadarLeft();
+        if (!canPlaceShips && TargetRadarRight == null)
+            SetTargetRadarRight();
         Debug.Log(name + " reload radar!");
+        TargetRadarLeft.GetComponent<RadarScript>().ReloadRadar();
+        TargetRadarRight.GetComponent<RadarScript>().ReloadRadar();
     }
 }

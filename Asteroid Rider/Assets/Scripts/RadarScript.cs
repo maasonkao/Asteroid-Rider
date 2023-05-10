@@ -160,4 +160,9 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
             }
         }
     }
+
+    public void ReloadRadar()
+    {
+        hasShot = false;
+    }
 }
