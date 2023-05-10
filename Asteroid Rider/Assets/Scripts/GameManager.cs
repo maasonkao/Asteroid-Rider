@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
                 rightIndex++;
             else
                 return playerList[rightIndex].GetComponent<PlayerScript>();
-            if (rightIndex == playerCount - 1)
+            if (rightIndex >= playerCount)
                 rightIndex = 0;
         }
 /*        for (int i=0; i<playerList.Count; i++)
