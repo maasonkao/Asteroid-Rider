@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Returning indexed player");
         return playerList[rightIndex].GetComponent<PlayerScript>();
     }
-
+/*
     public PlayerScript GetPlayerLeft()
     {
         if (currentTurn == 0)
@@ -173,7 +173,7 @@ public class GameManager : MonoBehaviour
 
         return playerList[currentTurn + 1].GetComponent<PlayerScript>();
     }
-
+*/
     public void SetText(string text)
     {
         altText = true;
