@@ -137,6 +137,7 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
                 destroyAnimation.Play("RadarLeftDestroyAnimation");
                 break;
             case false:
+                destroyAnimation.Play("RadarRightDestroyAnimation");
                 break;
 
         }
