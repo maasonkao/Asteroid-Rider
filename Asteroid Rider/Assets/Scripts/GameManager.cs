@@ -8,18 +8,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public enum BattleState
-{
-    START = 0,
-    P1 = 1,
-    P2 = 2,
-    P3 = 3,
-    P4 = 4,
-
-    GAMEOVER = 10,
-
-}
-
 public class GameManager : MonoBehaviour
 {
     public GameObject playerPrefab;
@@ -27,9 +15,6 @@ public class GameManager : MonoBehaviour
     public List<GameObject> playerList;
     public UnityEvent endRound;
     
-
-    public BattleState state;
-
     [SerializeField] int playerCount;
     [SerializeField] int currentTurn = 0;
     [SerializeField] int currentPlayerNum;
@@ -54,7 +39,6 @@ public class GameManager : MonoBehaviour
 
     void SetupBattle()
     {
-        state = BattleState.START;
         playerList = GameObject.FindGameObjectsWithTag("Player").OrderBy(n => n.name).ToList();
         playerCount = playerList.Count();
         currentPlayer = playerList[currentTurn].GetComponent<PlayerScript>();
@@ -88,12 +72,6 @@ public class GameManager : MonoBehaviour
         currentPlayerNum = currentPlayer.playerNum;
         string playerName = currentPlayer.playerName;
         viewBlockerText.SetText(playerName + " Start!");
-
-        if (!BattleState.TryParse(playerName, out state))
-        {
-            Debug.LogWarning("Could not parse state: " + playerName);
-        }
-        SetText(playerName + " Turn");
 
         //Set camera to view blocker
         mainCamera.transform.position = new Vector3(0, 20, -10);
@@ -205,11 +183,6 @@ public class GameManager : MonoBehaviour
             return playerList[0].GetComponent<PlayerScript>();
 
         return playerList[currentTurn + 1].GetComponent<PlayerScript>();
-    }
-
-    public void RemovePlayer()
-    {
-
     }
 
     public void SetText(string text)
