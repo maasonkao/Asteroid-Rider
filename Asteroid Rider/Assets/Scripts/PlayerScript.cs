@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject RadarRight;
     public GameObject TargetRadarLeft;
     public GameObject TargetRadarRight;
+    public UnityEvent gameOver;
 
     public List<GameObject> shipList;
     public int totalHP, leftHP, rightHP;
@@ -21,16 +23,15 @@ public class PlayerScript : MonoBehaviour
     public List<Vector3> radarLocations;
 
 
-    public bool isAlive = true;
     public bool canPlaceShips = true;
-    public bool leftDestroyed, rightDestroyed;
+    public bool leftDestroyed, rightDestroyed, defeated;
     [SerializeField] private GameManager gameManager;
 
 
     void Start()
     {
         //gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-
+        defeated = false;
         radarLocations.Add(Sea.transform.position + new Vector3(-9.9f, 0, 0));
         radarLocations.Add(Sea.transform.position + new Vector3(9.9f, 0, 0));
 
@@ -67,6 +68,12 @@ public class PlayerScript : MonoBehaviour
 
         if (rightHP == 0)
             rightDestroyed = true;
+
+        if(totalHP == 0)
+        {
+            defeated = true;
+            gameOver.Invoke();
+        }
 
     }
 
@@ -118,7 +125,7 @@ public class PlayerScript : MonoBehaviour
             SetTargetRadarLeft();
         if (!canPlaceShips && TargetRadarRight == null)
             SetTargetRadarRight();
-        Debug.Log(name + " reload radar!");
+
         TargetRadarLeft.GetComponent<RadarScript>().ReloadRadar();
         TargetRadarRight.GetComponent<RadarScript>().ReloadRadar();
     }

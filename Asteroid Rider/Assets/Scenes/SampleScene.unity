@@ -1088,7 +1088,7 @@ GameObject:
   - component: {fileID: 380145951}
   - component: {fileID: 380145950}
   m_Layer: 0
-  m_Name: Player 2
+  m_Name: P2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1113,6 +1113,9 @@ MonoBehaviour:
   RadarRight: {fileID: 961142063}
   TargetRadarLeft: {fileID: 0}
   TargetRadarRight: {fileID: 0}
+  gameOver:
+    m_PersistentCalls:
+      m_Calls: []
   shipList: []
   totalHP: 0
   leftHP: 0
@@ -8365,7 +8368,7 @@ GameObject:
   - component: {fileID: 852123462}
   - component: {fileID: 852123463}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: P1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8412,6 +8415,9 @@ MonoBehaviour:
   RadarRight: {fileID: 1049533094}
   TargetRadarLeft: {fileID: 0}
   TargetRadarRight: {fileID: 0}
+  gameOver:
+    m_PersistentCalls:
+      m_Calls: []
   shipList: []
   totalHP: 0
   leftHP: 0
@@ -11201,7 +11207,7 @@ GameObject:
   - component: {fileID: 3713208352916373079}
   - component: {fileID: 3713208352916373078}
   m_Layer: 0
-  m_Name: Player 4
+  m_Name: P4
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11226,6 +11232,9 @@ MonoBehaviour:
   RadarRight: {fileID: 1358930012}
   TargetRadarLeft: {fileID: 0}
   TargetRadarRight: {fileID: 0}
+  gameOver:
+    m_PersistentCalls:
+      m_Calls: []
   shipList: []
   totalHP: 0
   leftHP: 0
@@ -11364,6 +11373,9 @@ MonoBehaviour:
   RadarRight: {fileID: 691123203}
   TargetRadarLeft: {fileID: 0}
   TargetRadarRight: {fileID: 0}
+  gameOver:
+    m_PersistentCalls:
+      m_Calls: []
   shipList: []
   totalHP: 0
   leftHP: 0
@@ -11385,7 +11397,7 @@ GameObject:
   - component: {fileID: 3985778818758379664}
   - component: {fileID: 3985778818758379665}
   m_Layer: 0
-  m_Name: Player 3
+  m_Name: P3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -122,28 +122,71 @@ public class GameManager : MonoBehaviour
 
     public PlayerScript GetPlayerLeft(int player)
     {
-        for(int i=0; i<playerList.Count; i++)
+        int leftIndex;
+        int index = playerList.FindIndex(obj => obj.GetComponent<PlayerScript>().playerNum == player);
+        if (index == -1)
+        {
+            Debug.LogError("Could not find referenced player!");
+            return null;
+        }
+        else if(index == 0)
+            leftIndex = playerCount - 1;
+        else
+            leftIndex = index - 1;
+        
+        while(leftIndex != index)
+        {
+            if (playerList[leftIndex].GetComponent<PlayerScript>().defeated)
+                leftIndex--;
+            else
+                return playerList[leftIndex].GetComponent<PlayerScript>();
+            if(leftIndex < 0)
+                leftIndex = playerCount - 1;
+        }
+
+/*        for (int i=0; i<playerList.Count; i++)
         {
             if(playerList[i].GetComponent<PlayerScript>().playerNum == player)
                 if(i == 0)
                     return playerList[playerList.Count - 1].GetComponent<PlayerScript>();
                 else
                     return playerList[i - 1].GetComponent<PlayerScript>();
-        }
+        }*/
         Debug.LogError("Could not find left player!");
         return null;
     }
 
     public PlayerScript GetPlayerRight(int player)
     {
-        for(int i=0; i<playerList.Count; i++)
+        int rightIndex;
+        int index = playerList.FindIndex(obj => obj.GetComponent<PlayerScript>().playerNum == player);
+        if (index == -1)
+        {
+            Debug.LogError("Could not find referenced player!");
+            return null;
+        }
+        else if (index == playerCount - 1)
+            rightIndex = 0;
+        else
+            rightIndex = index + 1;
+
+        while (rightIndex != index)
+        {
+            if (playerList[rightIndex].GetComponent<PlayerScript>().defeated)
+                rightIndex++;
+            else
+                return playerList[rightIndex].GetComponent<PlayerScript>();
+            if (rightIndex == playerCount - 1)
+                rightIndex = 0;
+        }
+/*        for (int i=0; i<playerList.Count; i++)
         {
             if(playerList[i].GetComponent<PlayerScript>().playerNum == player)
                 if(i == playerList.Count - 1)
                     return playerList[0].GetComponent<PlayerScript>();
                 else
                     return playerList[i + 1].GetComponent<PlayerScript>();
-        }
+        }*/
         Debug.LogError("Could not find right player!");
         return null;
     }
@@ -162,6 +205,11 @@ public class GameManager : MonoBehaviour
             return playerList[0].GetComponent<PlayerScript>();
 
         return playerList[currentTurn + 1].GetComponent<PlayerScript>();
+    }
+
+    public void RemovePlayer()
+    {
+
     }
 
     public void SetText(string text)
