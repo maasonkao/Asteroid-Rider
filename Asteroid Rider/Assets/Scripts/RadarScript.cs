@@ -16,6 +16,7 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
 
     private GameManager gameManager;
     private Camera _mainCamera;
+    private Animation destroyAnimation;
     [SerializeField] private SeaScript seaScript;
 
     public TextMeshProUGUI radarText;
@@ -29,7 +30,7 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         grid = GameObject.Find("GameManager").GetComponent<Grid>();
-
+        destroyAnimation = gameObject.GetComponent<Animation>();
         seaScript = GameObject.FindGameObjectWithTag(seaName).GetComponent<SeaScript>();
 
         foreach (Transform child in transform)
@@ -130,7 +131,15 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
 
     IEnumerator DestroyRadar()
     {
-        Debug.Log("DestroyRadar Coroutine started");
+        switch(isLeft)
+        {
+            case true:
+                destroyAnimation.Play("RadarLeftDestroyAnimation");
+                break;
+            case false:
+                break;
+
+        }
         radarText.text += " has been destroyed!";
         yield return new WaitForSeconds(3);
         Destroy(gameObject);
