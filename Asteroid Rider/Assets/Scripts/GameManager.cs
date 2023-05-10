@@ -71,7 +71,11 @@ public class GameManager : MonoBehaviour
         currentPlayer = playerList[currentTurn].GetComponent<PlayerScript>();
         currentPlayerNum = currentPlayer.playerNum;
         string playerName = currentPlayer.playerName;
+
         viewBlockerText.SetText(playerName + " Start!");
+
+        if(currentPlayer.defeated)
+            NextTurn();
 
         //Set camera to view blocker
         mainCamera.transform.position = new Vector3(0, 20, -10);
@@ -122,16 +126,8 @@ public class GameManager : MonoBehaviour
                 leftIndex = playerCount - 1;
         }
 
-/*        for (int i=0; i<playerList.Count; i++)
-        {
-            if(playerList[i].GetComponent<PlayerScript>().playerNum == player)
-                if(i == 0)
-                    return playerList[playerList.Count - 1].GetComponent<PlayerScript>();
-                else
-                    return playerList[i - 1].GetComponent<PlayerScript>();
-        }*/
-        Debug.LogError("Could not find left player!");
-        return null;
+        Debug.Log("Returning indexed player");
+        return playerList[leftIndex].GetComponent<PlayerScript>();
     }
 
     public PlayerScript GetPlayerRight(int player)
@@ -157,16 +153,9 @@ public class GameManager : MonoBehaviour
             if (rightIndex >= playerCount)
                 rightIndex = 0;
         }
-/*        for (int i=0; i<playerList.Count; i++)
-        {
-            if(playerList[i].GetComponent<PlayerScript>().playerNum == player)
-                if(i == playerList.Count - 1)
-                    return playerList[0].GetComponent<PlayerScript>();
-                else
-                    return playerList[i + 1].GetComponent<PlayerScript>();
-        }*/
-        Debug.LogError("Could not find right player!");
-        return null;
+
+        Debug.Log("Returning indexed player");
+        return playerList[rightIndex].GetComponent<PlayerScript>();
     }
 
     public PlayerScript GetPlayerLeft()
