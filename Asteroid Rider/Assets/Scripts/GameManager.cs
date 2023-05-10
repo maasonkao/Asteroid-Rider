@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerScript currentPlayer;
     [SerializeField] TextMeshProUGUI statusText;
     [SerializeField] TextMeshPro viewBlockerText;
-
     [SerializeField] Canvas mainCanvas;
+
     bool altText;
     float timer;
 
@@ -64,24 +64,24 @@ public class GameManager : MonoBehaviour
 
     public void NextTurn()
     {
-        if (currentPlayer.canPlaceShips && currentPlayer.totalHP != 14)
-        {
-            SetText("You must place all your ships!");
+        if (CheckShipPlacement() == false)
             return;
-        }
-        if (currentPlayer.canPlaceShips && (currentPlayer.leftHP == 0 || currentPlayer.rightHP == 0))
-        {
-            SetText("You must place ships on the left and right of the field");
-            return;
-        }
+
         mainCanvas.enabled = false;
         currentTurn++;
 
-        if (currentPlayer.canPlaceShips)
-            currentPlayer.canPlaceShips = false;
-
         if (currentTurn >= playerCount)
+        {
+            if (currentPlayer.canPlaceShips)
+            {
+                foreach (GameObject player in playerList)
+                {
+                    player.GetComponent<PlayerScript>().canPlaceShips = false;
+                }
+            }
+
             currentTurn = 0;
+        }
 
         currentPlayer = playerList[currentTurn].GetComponent<PlayerScript>();
         currentPlayerNum = currentPlayer.playerNum;
@@ -96,6 +96,21 @@ public class GameManager : MonoBehaviour
 
         //Set camera to view blocker
         mainCamera.transform.position = new Vector3(0, 20, -10);
+    }
+
+    private bool CheckShipPlacement()
+    {
+        if (currentPlayer.canPlaceShips && currentPlayer.totalHP != 14)
+        {
+            SetText("You must place all your ships!");
+            return false;
+        }
+        if (currentPlayer.canPlaceShips && (currentPlayer.leftHP == 0 || currentPlayer.rightHP == 0))
+        {
+            SetText("You must place ships on the left and right of the field");
+            return false;
+        }
+        return true;
     }
 
     public void SetCamera()
