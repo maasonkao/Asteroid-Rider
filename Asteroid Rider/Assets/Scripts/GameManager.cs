@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public Camera mainCamera;
     public List<GameObject> playerList;
     public UnityEvent endRound;
+    public UnityEvent gameOver;
     
     [SerializeField] int playerCount;
     [SerializeField] int currentTurn = 0;
@@ -127,6 +128,7 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("Returning indexed player");
+        gameOver.Invoke();
         return playerList[leftIndex].GetComponent<PlayerScript>();
     }
 
@@ -155,31 +157,17 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("Returning indexed player");
+        gameOver.Invoke();
         return playerList[rightIndex].GetComponent<PlayerScript>();
     }
-/*
-    public PlayerScript GetPlayerLeft()
-    {
-        if (currentTurn == 0)
-            return playerList[playerCount - 1].GetComponent<PlayerScript>();
 
-        return playerList[currentTurn - 1].GetComponent<PlayerScript>();
-    }
-
-    public PlayerScript GetPlayerRight()
-    {
-        if (currentTurn == playerCount - 1)
-            return playerList[0].GetComponent<PlayerScript>();
-
-        return playerList[currentTurn + 1].GetComponent<PlayerScript>();
-    }
-*/
     public void SetText(string text)
     {
         altText = true;
         timer = 0;
         statusText.text = text;
     }
+
     private void StatusText()
     {
         if(currentPlayer.canPlaceShips && !altText)
@@ -196,5 +184,10 @@ public class GameManager : MonoBehaviour
                 timer = 0;
             }
         }
+    }
+
+    public void GameOver()
+    {
+        SetText("Congratulations! You win!");
     }
 }
