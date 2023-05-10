@@ -111,4 +111,9 @@ public class PlayerScript : MonoBehaviour
             shipScript.Move();
         }
     }
+
+    public void ReloadRadar()
+    {
+        Debug.Log(name + " reload radar!");
+    }
 }

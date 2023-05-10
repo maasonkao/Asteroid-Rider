@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public enum BattleState
 {
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public Camera mainCamera;
     public List<GameObject> playerList;
-
+    public UnityEvent endRound;
     
 
     public BattleState state;
@@ -79,7 +80,7 @@ public class GameManager : MonoBehaviour
                     player.GetComponent<PlayerScript>().canPlaceShips = false;
                 }
             }
-
+            endRound.Invoke();
             currentTurn = 0;
         }
 
