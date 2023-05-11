@@ -171,6 +171,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ResetShipPosition()
+    {
+        currentPlayer.ResetShipPosition();
+    }
+
     public void GameOver()
     {
         SetText("Congratulations! You win!");

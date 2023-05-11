@@ -18,11 +18,11 @@ public class PlayerScript : MonoBehaviour
     public UnityEvent gameOver;
 
     public List<GameObject> shipList;
-    public int totalHP, leftHP, rightHP;
     
     public List<Vector3> radarLocations;
+    public List<Vector3> initialShipPos;
 
-
+    public int totalHP, leftHP, rightHP;
     public bool canPlaceShips = true;
     public bool leftDestroyed, rightDestroyed, defeated;
     [SerializeField] private GameManager gameManager;
@@ -37,6 +37,11 @@ public class PlayerScript : MonoBehaviour
 
         string shipString = playerName + "_Ship";
         shipList = GameObject.FindGameObjectsWithTag(shipString).ToList();
+        foreach(GameObject ship in shipList)
+        {
+            Debug.Log("Ship name: " + ship.name + "\n Ship pos: " + ship.transform.position);
+            initialShipPos.Add(ship.transform.position);
+        }
 
     }
     void Update()
@@ -151,5 +156,13 @@ public class PlayerScript : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    public void ResetShipPosition()
+    {
+        for(int i=0; i<initialShipPos.Count(); i++)
+        {
+            shipList[i].transform.position = initialShipPos[i];
+        }
     }
 }
