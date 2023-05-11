@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
                 {
                     player.GetComponent<PlayerScript>().canPlaceShips = false;
                 }
+                DisableResetShipsButton();
             }
             endRound.Invoke();
             currentTurn = 0;
@@ -176,8 +177,15 @@ public class GameManager : MonoBehaviour
         currentPlayer.ResetShipPosition();
     }
 
+    public void DisableResetShipsButton()
+    {
+        GameObject resetButton = GameObject.FindGameObjectWithTag("ResetShipsButton");
+        GameObject.FindGameObjectWithTag("ResetShipsButton").SetActive(false);
+    }
+
     public void GameOver()
     {
         SetText("Congratulations! You win!");
     }
+    
 }

@@ -39,7 +39,6 @@ public class PlayerScript : MonoBehaviour
         shipList = GameObject.FindGameObjectsWithTag(shipString).ToList();
         foreach(GameObject ship in shipList)
         {
-            Debug.Log("Ship name: " + ship.name + "\n Ship pos: " + ship.transform.position);
             initialShipPos.Add(ship.transform.position);
         }
 

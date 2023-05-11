@@ -23,6 +23,7 @@ TagManager:
   - P4_Ship
   - ViewBlocker
   - Radar
+  - ResetShipsButton
   layers:
   - Default
   - TransparentFX
