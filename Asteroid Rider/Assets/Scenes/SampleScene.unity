@@ -9145,6 +9145,7 @@ MonoBehaviour:
   textDelayTime: 3
   currentPlayer: {fileID: 0}
   statusText: {fileID: 1567904081}
+  topText: {fileID: 346112941}
   viewBlockerText: {fileID: 0}
   mainCanvas: {fileID: 897437694}
 --- !u!1001 &694407728867595314
