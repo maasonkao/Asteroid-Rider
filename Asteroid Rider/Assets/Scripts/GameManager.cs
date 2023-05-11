@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] float textDelayTime;
     [SerializeField] PlayerScript currentPlayer;
     [SerializeField] TextMeshProUGUI statusText;
+    [SerializeField] TextMeshProUGUI topText;
     [SerializeField] TextMeshPro viewBlockerText;
     [SerializeField] Canvas mainCanvas;
 
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         StatusText();
+        topText.text = currentPlayer.playerName + " Turn";
     }
 
     void SetupBattle()
