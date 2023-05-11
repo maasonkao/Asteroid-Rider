@@ -7,13 +7,14 @@ public class ShipScript : MonoBehaviour
 {
     [SerializeField] private Grid grid;
     [SerializeField] private ShipType shipType;
-    [SerializeField] private int health,damage;
+    [SerializeField] private int damage;
     [SerializeField] private List<GameObject> touchingTiles;
 
     private GameManager gameManager;
     private float startingPosX, startingPosY;
     private bool isBeingHeld = false;
     public bool isSunk = false;
+    public int health;
 
     enum ShipType
     {

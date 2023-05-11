@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     public void NextTurn()
     {
-        if (CheckShipPlacement() == false)
+        if (currentPlayer.ValidShipPlacement() == false)
             return;
 
         mainCanvas.enabled = false;
@@ -80,21 +80,6 @@ public class GameManager : MonoBehaviour
 
         //Set camera to view blocker
         mainCamera.transform.position = new Vector3(0, 20, -10);
-    }
-
-    private bool CheckShipPlacement()
-    {
-        if (currentPlayer.canPlaceShips && currentPlayer.totalHP != 14)
-        {
-            SetText("You must place all your ships!");
-            return false;
-        }
-        if (currentPlayer.canPlaceShips && (currentPlayer.leftHP == 0 || currentPlayer.rightHP == 0))
-        {
-            SetText("You must place ships on the left and right of the field");
-            return false;
-        }
-        return true;
     }
 
     public void SetCamera()

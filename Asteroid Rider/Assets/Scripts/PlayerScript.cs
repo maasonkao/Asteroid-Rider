@@ -129,4 +129,27 @@ public class PlayerScript : MonoBehaviour
         TargetRadarLeft.GetComponent<RadarScript>().ReloadRadar();
         TargetRadarRight.GetComponent<RadarScript>().ReloadRadar();
     }
+
+    public bool ValidShipPlacement()
+    {
+        if(!canPlaceShips)
+            return true;
+        
+        int startingHP = 0;
+        foreach(GameObject ship in shipList)
+        {
+            startingHP += ship.GetComponent<ShipScript>().health;
+        }
+        if(startingHP != totalHP)
+        {
+            gameManager.SetText("You must place all your ships!");
+            return false;
+        }
+        if(leftHP == 0 || rightHP == 0)
+        {
+            gameManager.SetText("You must place ships on the left and right of the field");
+            return false;
+        }
+        return true;
+    }
 }
