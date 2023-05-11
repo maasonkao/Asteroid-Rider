@@ -9,6 +9,7 @@ public enum TileType
     shipTile = 20,
     missTile = 30,
     hitTile = 40,
+    invalidPlacementTile = 41,
     radarTile = 50,
 };
 
@@ -45,7 +46,7 @@ public class TileScript : MonoBehaviour
         {
             overlap++;
             if(overlap > 1)
-                SetTileType(TileType.hitTile);
+                SetTileType(TileType.invalidPlacementTile);
             else
                 SetTileType(TileType.shipTile);
         }
@@ -77,6 +78,7 @@ public class TileScript : MonoBehaviour
                 spriteRenderer.color = new Color32(0xF5, 0xFF, 0x00, 0xFF);
                 break;
             case TileType.hitTile:
+            case TileType.invalidPlacementTile:
                 spriteRenderer.color = Color.red;
                 break;
             default:
