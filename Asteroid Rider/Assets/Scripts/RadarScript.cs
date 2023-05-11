@@ -106,6 +106,7 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
             case TileType.shipTile:
                 targetSeaTile.GetComponent<TileScript>().SetTileType(TileType.hitTile);
                 hasShot = true;
+                Debug.Log("calling hit");
                 gameManager.SetText("Hit!");
                 break;
             case TileType.missTile:

@@ -105,7 +105,7 @@ public class ShipScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.Contains("Sea"))
+        if (collision.tag.Contains("Tile"))
         {
             touchingTiles.Add(collision.gameObject);
         }
@@ -113,7 +113,7 @@ public class ShipScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag.Contains("Sea"))
+        if (collision.tag.Contains("Tile"))
         {
             touchingTiles.Remove(collision.gameObject);
         }
@@ -131,6 +131,7 @@ public class ShipScript : MonoBehaviour
         if (damage == health && isSunk == false)
         {
             isSunk = true;
+            Debug.Log("Calling sunk");
             gameManager.SetText(name + " has been sunk!");
         }
 
