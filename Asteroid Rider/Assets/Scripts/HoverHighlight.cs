@@ -22,7 +22,7 @@ public class HoverHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         if(highlightTile != null)
         {
             Vector3Int mousePos = GetMousePosition();
-            highlightTile.transform.position = grid.GetCellCenterWorld(mousePos);
+            highlightTile.transform.position = grid.GetCellCenterWorld(mousePos) + new Vector3(-0.05f, -0.05f, 0);
         }
     }
 
