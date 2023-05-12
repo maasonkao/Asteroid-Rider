@@ -9207,6 +9207,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: P4
       objectReference: {fileID: 0}
+    - target: {fileID: 4189754429943556710, guid: a33c4182d153fd842a84cffc9faee02b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008157537297804570, guid: a33c4182d153fd842a84cffc9faee02b, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a33c4182d153fd842a84cffc9faee02b, type: 3}
 --- !u!1001 &1331498849406295750
@@ -9281,6 +9289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P3
       objectReference: {fileID: 0}
+    - target: {fileID: 3339505026385445152, guid: cc8d9a85486e2554cb7e8e54e7da91df, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3339505026385445154, guid: cc8d9a85486e2554cb7e8e54e7da91df, type: 3}
       propertyPath: gameManager
       value: 
@@ -9329,6 +9341,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7901694450354343068, guid: cc8d9a85486e2554cb7e8e54e7da91df, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc8d9a85486e2554cb7e8e54e7da91df, type: 3}
 --- !u!114 &3713208352916373078 stripped
@@ -9360,6 +9376,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2103204339321079461, guid: 0c3eb844e8f1a394795d4dfba735637c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103204339321079461, guid: 0c3eb844e8f1a394795d4dfba735637c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.79
+      objectReference: {fileID: 0}
     - target: {fileID: 2686369749388770264, guid: 0c3eb844e8f1a394795d4dfba735637c, type: 3}
       propertyPath: grid
       value: 

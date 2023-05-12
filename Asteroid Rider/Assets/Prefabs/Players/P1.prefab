@@ -35,7 +35,7 @@ Transform:
   - {fileID: 8308435342412811939}
   - {fileID: 8308435342614833337}
   - {fileID: 8308435343989222085}
-  - {fileID: 8308435343097056347}
+  - {fileID: 2103204339321079461}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62,15 +62,78 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   shipList: []
+  radarLocations: []
+  initialShipPos: []
   totalHP: 0
   leftHP: 0
   rightHP: 0
-  radarLocations: []
   canPlaceShips: 1
   leftDestroyed: 0
   rightDestroyed: 0
   defeated: 0
   gameManager: {fileID: 0}
+--- !u!1001 &76946416503207030
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8028852173291306992}
+    m_Modifications:
+    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189636579257564166, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+      propertyPath: m_Name
+      value: Two Dot Ship
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+--- !u!4 &2103204339321079461 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
+  m_PrefabInstance: {fileID: 76946416503207030}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8028852172171684730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -397,72 +460,6 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3426110583968109753, guid: 608b03c27e77a824688b4b59eb740457, type: 3}
   m_PrefabInstance: {fileID: 8028852172171684730}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8028852172260867720
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 8028852173291306992}
-    m_Modifications:
-    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7725843989771150912, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8189636579257564166, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-      propertyPath: m_Name
-      value: Two Dot Ship
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
---- !u!4 &8308435343097056347 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2026984250110292691, guid: ffa9a2f6e0b35054eb73d54dfb4b1cbc, type: 3}
-  m_PrefabInstance: {fileID: 8028852172260867720}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8028852172616875120
 PrefabInstance:
