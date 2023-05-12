@@ -81,7 +81,11 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
             return;
         }
 
-        foreach (var tile in radarTiles){
+        foreach (var tile in radarTiles)
+        {
+            if(tile.name == "highlight")
+                return;
+
             if (grid.LocalToCell(tile.transform.position) == mousePos)
             {
                 CheckTile(tile.name);
@@ -93,7 +97,7 @@ public class RadarScript : MonoBehaviour, IPointerDownHandler
     {
         GameObject targetRadarTile = radarTiles.Where(obj => obj.name == tileName).FirstOrDefault();
         GameObject targetSeaTile = seaTiles.Where(obj => obj.name == tileName).FirstOrDefault();
-
+        
         TileType seaTileType = targetSeaTile.GetComponent<TileScript>().GetTileType();
 
         switch (seaTileType)
