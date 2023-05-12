@@ -8170,7 +8170,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -8285,6 +8285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 2047063270}
   mainCanvas: {fileID: 897437694}
+  viewBlockerText: {fileID: 1490488390}
 --- !u!61 &1490488395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8298,7 +8299,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03259039, y: 0.11543706}
+  m_Offset: {x: -0.005766034, y: -0.0042406023}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8309,7 +8310,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.295144, y: 0.5701999}
+  m_Size: {x: 2.2414954, y: 0.71051174}
   m_EdgeRadius: 0
 --- !u!50 &1490488396
 Rigidbody2D:
