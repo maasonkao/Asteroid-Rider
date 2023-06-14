@@ -24,6 +24,7 @@ TagManager:
   - ViewBlocker
   - Radar
   - ResetShipsButton
+  - tutorial
   layers:
   - Default
   - TransparentFX
