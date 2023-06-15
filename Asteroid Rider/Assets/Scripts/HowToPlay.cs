@@ -4,27 +4,17 @@ using UnityEngine;
 
 public class HowToPlay : MonoBehaviour
 {
-    bool isEnabled = false;
-    GameObject tutorialImg;
-    [SerializeField] Camera mainCamera;
-
-    private void Start()
-    {
-        tutorialImg = GameObject.FindGameObjectWithTag("tutorial");
-    }
-
 
     public void Toggle()
     {
-        if (!isEnabled)
+        Debug.Log("Toggle called");
+        if (this.gameObject.activeSelf)
         {
-
-            tutorialImg.SetActive(true);
-            tutorialImg.transform.position = mainCamera.transform.position;
+            this.gameObject.SetActive(false);
         }
         else
         {
-            tutorialImg.SetActive(false);
+            this.gameObject.SetActive(true);
         }
     }
 
