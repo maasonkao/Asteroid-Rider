@@ -7,15 +7,9 @@ public class HowToPlay : MonoBehaviour
 
     public void Toggle()
     {
-        Debug.Log("Toggle called");
-        if (this.gameObject.activeSelf)
-        {
-            this.gameObject.SetActive(false);
-        }
-        else
-        {
-            this.gameObject.SetActive(true);
-        }
+        bool tog = this.gameObject.activeSelf ? false : true;
+        this.gameObject.SetActive(tog);
+
     }
 
 }
