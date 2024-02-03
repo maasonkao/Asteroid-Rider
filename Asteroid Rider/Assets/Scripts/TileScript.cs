@@ -66,16 +66,16 @@ public class TileScript : MonoBehaviour
         switch (tileType)
         {
             case TileType.seaTile:
-                spriteRenderer.color = new Color32(0x81, 0x85, 0xD1, 0xD5);
+                spriteRenderer.color = new Color32(0x81, 0x85, 0xD1, 0x83);
                 break;
             case TileType.shipTile:
-                spriteRenderer.color = new Color32(0xD1, 0x91, 0x23, 0xFF);
+                spriteRenderer.color = new Color32(0xD1, 0x91, 0x23, 0x99);
                 break;
             case TileType.radarTile:
-                spriteRenderer.color = new Color32(0x63, 0x1B, 0x1C, 0xD5);
+                spriteRenderer.color = new Color32(0x63, 0x1B, 0x1C, 0x83);
                 break;
             case TileType.missTile:
-                spriteRenderer.color = new Color32(0xF5, 0xFF, 0x00, 0xFF);
+                spriteRenderer.color = new Color32(0xF5, 0xFF, 0x00, 0xF0);
                 break;
             case TileType.hitTile:
             case TileType.invalidPlacementTile:
